@@ -1,2 +1,3 @@
-# p5jsSketches
-mySketches made with p5.js
+# p5_gallery
+
+My gallery of p5.js sketches.
