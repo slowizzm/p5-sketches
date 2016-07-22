@@ -7,7 +7,7 @@ function Chakra() {
 
     //orb
     ellipseMode(CENTER);
-    stroke(233, 133, 133);
+    stroke(233, 133, 233);
     noFill();
     //point(width / 2, height / 2, 10, 10);
 
