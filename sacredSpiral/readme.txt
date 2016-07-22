@@ -1,0 +1,1 @@
+The golden ratio, phyllotaxis.
