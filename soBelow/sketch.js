@@ -107,6 +107,7 @@ function mouseDragged() {
   }
 }
 
-// function mousePressed() {
-
-// }
+function windowResized() {
+ resizeCanvas(windowWidth, windowHeight); 
+}
+}
