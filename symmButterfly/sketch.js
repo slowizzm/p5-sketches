@@ -71,6 +71,12 @@ function draw() {
   }  
   pop();
   
+  push();
+  ellipseMode(CENTER);
+  noStroke();
+  fill(33);
+  ellipse(windowWidth/2, windowHeight/2 + 7, 13, 33);
+  pop();
 }
 
 function windowResized() {
