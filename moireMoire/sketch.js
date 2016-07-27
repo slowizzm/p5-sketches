@@ -12,7 +12,7 @@ var x,
     i = 0;
 
 function setup() {
-  createCanvas(600,400);
+  createCanvas(windowWidth, windowHeight);
   x = width;
   y = height;
   
