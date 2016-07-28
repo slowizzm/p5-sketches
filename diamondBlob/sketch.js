@@ -12,7 +12,7 @@ function setup() {
 }
 
 function draw() {
-  background(0, 33, 42);
+  background(33);
   translate(windowWidth / 2, windowHeight / 2);
 
   for (var i = 0; i < 360; i += 0.3) {
