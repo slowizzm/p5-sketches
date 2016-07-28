@@ -8,7 +8,7 @@
 
 
 var angle,
-    gen = 333;
+    gen = 33;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
