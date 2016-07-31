@@ -36,7 +36,7 @@ function setup() {
 
     titlez = createElement('h1', "Seven Factors of Enlightenment");
     titlez.style("font-size", 33);
-    titlez.position(750, 100);
+    titlez.position(750, 90);
     descript = createP("<b>Seven Factors of Enlightenment</b> is a study of human interaction with the seven chakras in <br/>a virtual space. We want to ask the questions, <b>'what if the chakras were a tangible object,<br/> how would humans interact with them, and how would this make them feel?'</b> <br/>The users are able to alter the geometry and the physics, which changes the representation <br/>of each chakra. The installation consists of a custom designed cabinet and a Glass <br/>of 4.30 x 2.20 (with Capacitive MultiTouch technology if possible), 4 Microsoft Xbox V2 Kinects <br/>and 4 projectors. <br/><br/> Visuals code writin in openFrameworks, Processing, p5.js. Audio composed within Max, oF, p5.js.");
     descript.position(750, 130);
 
