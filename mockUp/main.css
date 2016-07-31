@@ -1,0 +1,494 @@
+body {
+    font-family: "Georgia";
+    color: rgb(68, 68, 68);
+    font-size: .9em;
+    margin-bottom: 100px;
+}
+
+.container {
+    /*position: relative;*/
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.container article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.title {
+    font-family: "Lato", sans-serif;
+    font-size: 1.7em;
+    font-weight: normal;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 13px;
+}
+
+.subtitle {
+    ;
+    font-size: 0.7em;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+    margin-top: 13px;
+}
+
+.dream {
+    font-size: .9em;
+    font-weight: inherit;
+    color: rgb(0);
+    font-style: italic;
+    margin-bottom: 23px;
+    /*text-align: center;*/
+}
+
+.sub2 {
+    font-size: .9em;
+    font-weight: inherit;
+    color: rgb(168, 168, 168);
+    font-style: italic;
+    margin-bottom: 13px;
+    /*text-align: center;*/
+}
+
+.sketch {
+    ;
+    font-size: 0.6em;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 13px;
+    margin-top: 3px;
+}
+
+
+/* For iPhone */
+
+@media (min-width: 320px) {
+    .container {
+        width: 85%;
+        padding: 0;
+    }
+    header {
+        height: 35px;
+        margin-top: 20px;
+    }
+    footer {
+        margin-bottom: 20px;
+    }
+    header h1 {
+        font-size: 1.5em;
+    }
+    header h2 {
+        font-size: 1em;
+        line-height: 2.18em;
+    }
+    article {
+        margin-top: 50px;
+    }
+    footer {
+        margin: 30px auto 0 auto;
+    }
+    nav {
+        display: none;
+    }
+    nav.index {
+        display: block;
+        clear: none;
+        float: left;
+    }
+    nav.index ul {
+        margin: 0;
+    }
+}
+
+
+/* For devices larger than 550px */
+
+@media (min-width: 550px) {
+    .container {
+        width: 80%;
+    }
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+}
+
+@media (min-width: 550px) {
+    body {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        transition: 0.5s;
+    }
+    nav {
+        height: 20px;
+        display: block;
+    }
+    article p,
+    article h1,
+    article h2,
+    article h3,
+    article blockquote,
+    article aside,
+    article iframe,
+    article ul,
+    article .MathJax_Display,
+    article pre,
+    article ol {
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    header h1 {
+        font-size: 2em;
+    }
+    header h2 {
+        font-size: 1.25em;
+        line-height: 2.45em;
+    }
+    nav.index {
+        display: block;
+        clear: both;
+        float: none;
+    }
+    nav.index ul {
+        margin: inherit;
+    }
+}
+
+article .thumbnail {
+    transition: 0.5s;
+}
+
+@media (min-width: 100px) {
+    article .thumbnail {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (min-width: 700px) {
+    article .thumbnail {
+        width: 23%;
+        height: 23%;
+    }
+}
+
+@media (min-width: 953px) {
+    article .thumbnail {
+        width: 32%;
+        height: 32%;
+    }
+}
+
+@media (min-width: 1220px) {
+    body {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        transition: 0.5s;
+    }
+    article {
+        margin-top: 100px;
+        max-width: 960px;
+    }
+    article .thumbnail {
+        width: 310px;
+        height: 310px;
+    }
+    nav {
+        height: 20px;
+    }
+    footer {
+        margin: 60px auto 0 auto;
+    }
+    article p,
+    article h1,
+    article h2,
+    article h3,
+    article blockquote,
+    article aside,
+    article iframe,
+    article ul,
+    article .MathJax_Display,
+    article pre,
+    article ol {
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
+}
+
+.thumbnail {
+    width: 310px;
+    height: 310px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+header h1 {
+    font-family: 'Roboto', sans-serif;
+    float: left;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+header h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    color: #bbb;
+    float: left;
+    margin: 0;
+    margin-left: 0.5em;
+}
+
+header h2:lang(ar) {
+    font-family: 'Amiri', serif;
+}
+
+nav {
+    clear: both;
+}
+
+nav ul {
+    clear: both;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    float: left;
+    margin-right: 1em;
+    height: 1.2em;
+}
+
+nav a,
+header h1 a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    transition: 0.1s;
+}
+
+header h1 a::before {
+    content: "â†";
+    opacity: 0;
+    transition: 0.1s;
+}
+
+header h1 a:hover::before {
+    opacity: 1;
+    transition: 0.1s;
+}
+
+header h1 a {
+    margin-left: -1em;
+}
+
+nav li:hover a {
+    color: black;
+    height: 1.6em;
+    margin-top: -5px;
+    transition: 0.1s;
+}
+
+article {
+    font-size: 1.3em;
+    font-family: Georgia, serif;
+    clear: both;
+}
+
+article p {
+    line-height: 1.5em;
+}
+
+article aside {
+    text-align: center;
+    font-size: 1.75em;
+}
+
+article h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3em;
+}
+
+article h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
+}
+
+article table.blog {
+    font-family: 'Roboto', sans-serif;
+}
+
+article table.blog td.date {
+    color: #bbb;
+}
+
+article table.blog td.title {
+    font-weight: 700;
+}
+
+article h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+}
+
+article blockquote {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    border-left: 3px solid black;
+    padding-left: 2em;
+    margin-left: 0;
+    margin-right: 0;
+    font-style: italic;
+}
+
+article blockquote cite::before {
+    content: "â€” ";
+}
+
+article blockquote cite {
+    padding-top: 1em;
+    display: block;
+}
+
+@media(min-width: 0px) {
+    .columns {
+        margin-top: 0;
+        margin-bottom: 2em;
+    }
+    .columns * {
+        margin-bottom: 0;
+    }
+    /*article .row p {*/
+    /*margin-top: 0;*/
+    /*}*/
+}
+
+@media(min-width: 550px) {
+    .row {
+        margin-top: 0;
+        margin-bottom: 2em;
+    }
+    .row * {
+        margin-bottom: 0;
+    }
+}
+
+article iframe {
+    border: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+article pre {
+    background: #333;
+    padding: 1em;
+    overflow: scroll;
+}
+
+article pre code {
+    white-space: wrap;
+    color: #eee;
+    background: none;
+    font-size: 1em;
+}
+
+article code {
+    font-family: Menlo, monospace;
+    font-size: 0.9em;
+    white-space: pre;
+    background-color: #eee;
+    color: #333;
+    padding: 2px;
+}
+
+article img {
+    /*display: block;*/
+    width: 100%;
+}
+
+article sup {
+    vertical-align: top;
+    position: relative;
+    top: -0.7em;
+}
+
+article img.noscale {
+    /*display: block;*/
+    width: 600px;
+}
+
+article sup a[href] {
+    color: #bbb;
+    border: none;
+}
+
+article sup a[name] {
+    color: #bbb;
+    border: none;
+}
+
+article sup a[href]:hover {
+    color: black;
+    border: none;
+}
+
+article a[href] {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px dotted #000;
+}
+
+article a[href] code {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px dotted #000;
+}
+
+article a.noline {
+    text-decoration: none;
+    border-bottom: none;
+}
+
+article a[href]:hover {
+    color: #000;
+    border-bottom: 1px solid #000;
+}
+
+article a[href]:hover code {
+    color: #000;
+    border-bottom: 1px solid #000;
+}
+
+article a.noline:hover {
+    color: #000;
+    border-bottom: none;
+}
+
+footer {
+    font-size: 0.3em;
+    color: #eee;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    clear: both;
+}
+
+footer div {
+    border-top: 1px solid #eee;
+    padding-top: 1em;
+    margin: 0 auto;
+    width: 50%;
+}
