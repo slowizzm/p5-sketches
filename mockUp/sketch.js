@@ -11,20 +11,20 @@ var titlez,
     factors,
     equpt,
     instruct,
+    install,
     crew;
 
 function preload() {
     img = loadImage("assets/mockUpBg.jpg");
     img2 = loadImage("assets/mockUpBg.png");
 
-    // soundFormats('ogg', 'mp3');
+    soundFormats('ogg', 'mp3');
 
 
     cVerb = createConvolver('assets/chakra.mp3');
 
     cVerb.addImpulse('assets/vinyl.mp3');
     sound = loadSound('assets/om.mp3');
-
 }
 
 function setup() {
@@ -35,20 +35,22 @@ function setup() {
         mantra.push(p);
     }
 
-    titlez = createElement('h1', "Seven Factors of Enlightenment");
+    titlez = createP("<b>Seven Factors of Enlightenment</b>");
     titlez.style("font-size", 33);
-    titlez.position(750, 100);
-    descript = createP("<b>Seven Factors of Enlightenment</b> is a study of human interaction with the chakra system in <br/>a virtual space. We want to ask the questions, <b>'what if the chakras were a tangible object,<br/> how would humans interact with them, and what affect would this interaction produce?'</b> <br/>The users are able to alter the geometry and the physics, which changes the representation <br/>of each chakra. The installation consists of a custom designed cabinet and a Glass <br/>of 4.30 x 2.20 (with Capacitive MultiTouch technology if possible), 4 Microsoft Xbox V2 Kinects <br/>and 4 projectors. <br/><br/> Visuals code writin in openFrameworks, Processing, p5.js. Audio composed within Max, oF, p5.js.");
-    descript.position(750, 130);
+    titlez.position(750, 90);
+    descript = createP("<b>Seven Factors of Enlightenment</b> is a study of human interaction with the chakra system in <br/>a virtual space. We want to ask the questions, <b>'what if the chakras were a tangible object,<br/> how would humans interact with them, and what affect would this interaction produce?'</b> <br/> Due to the interactive nature of this installation, no two people are going to experience a chakra<br/> the same way, so in a sense, this is also about <b>self discovery</b> and coming to understand more about <br/>yourself and what the principles of each chakra <b>mean to you</b>. The users are able to alter the geometry <br/>and the physics, which changes the representation of each chakra. ");
+    descript.position(750, 125);
 
     equipt = createP("Each sensor affects the over all composition differently. Hand movement can alter the physics<br/> of the chakras, analogous to manipulating video transitions complimenting the corresponding<br/> chakra. At the same time the user's location in the room alters the audio composition to produce<br/> self-rhythms and organic results. When the 4 Kinects are working simultaneously, both visuals and<br/> sounds generated from each sensor are combined into one composition.");
-    equipt.position(750, 300);
+    equipt.position(750, 255);
 
+    install = createP("The installation consists of a custom designed cabinet and a Glass <br/>of 4.30 x 2.20 (with Capacitive MultiTouch technology if possible), 4 Microsoft Xbox V2 Kinects <br/>and 4 projectors. <br/><br/> Visuals code writin in openFrameworks, Processing, p5.js. Audio composed within Max, oF, p5.js.")
+    install.position(750, 355);
 
     factors = createP("<b>Mindfulness <br/>Investigation<br/>Energy<br/>Joy<br/>Tranquility<br/>Concentration<br/>Equanimity</b>");
-    factors.position(750, 410);
-    crew = createP("<b>Visuals, Interactivity, and Audio Design:</b> <br/> Raymond G McCord and James Styron");
-    crew.position(750, 555);
+    factors.position(750, 445);
+    crew = createP("<b>Visuals, Interactivity, and Sound Design:</b> <br/> Raymond G McCord and James Styron");
+    crew.position(750, 575);
 
     instruct = createP("*move mouse over canvas to affect the direction of the chakra rotation and to play the audio.");
     instruct.position(15, 600);
@@ -66,13 +68,10 @@ function setup() {
         currentIR = 0;
     }
     cVerb.toggleImpulse(currentIR);
-
 }
 
 function draw() {
-    //background(255);
     var soundY = map(mouseY, 0, height, 0, 1);
-
 
     var spectrum = fft.analyze();
     noStroke();
@@ -88,25 +87,12 @@ function draw() {
     for (var i = 0; i < 1; i++) {
         mantra[i].display();
         image(img2, width / 2, height / 2, img.width / 2, img.height / 2);
-
-        //mySound.rate(map(mouseX, 0, width, -0.33, 0.33));
-
-
     }
 
     sound.amp(map(mouseY, height, 0, 0.07, 0.3));
-
-
-
-
 }
 
 function mouseMoved() {
     sound.stop();
     sound.play();
-
 }
-
-//function windowResized() {
-//  resizeCanvas(windowWidth, windowHeight);
-//}
