@@ -9,8 +9,9 @@ var rawImpulse;
 var titlez,
     descript,
     factors,
-    equpt
-crew;
+    equpt,
+    instruct,
+    crew;
 
 function preload() {
     img = loadImage("assets/mockUpBg.jpg");
@@ -48,6 +49,9 @@ function setup() {
     factors.position(750, 410);
     crew = createP("<b>Visuals, Interactivity, and Audio Design:</b> <br/> Raymond G McCord and James Styron");
     crew.position(750, 555);
+
+    instruct = createP("*move mouse over canvas to affect the direction of the chakra rotation and to play the audio.");
+    instruct.position(15, 600);
 
 
     stroke(200, 0, 255, 80);
