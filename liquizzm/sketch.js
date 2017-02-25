@@ -11,7 +11,7 @@ var particle = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  for (var k = 0; k < 33; k++) {
+  for (var i = 0; i < 33; i++) {
     p = new Particle(0, 0);
     particle.push(p);
 
@@ -20,15 +20,15 @@ function setup() {
     dripz.push(new Drip());
   }
 
-  for (var j = 0; j <= 666; j++) {
-    dripz[j].display();
-    dripz[j].update();
-
-  }
-
 }
 
 function draw() {
+
+for (var i = 0; i <= 666; i++) {
+    dripz[i].display();
+    dripz[i].update();
+  }
+
   var gravity = createVector(0, 0.3);
 
   var wind = createVector(.1, 0);
