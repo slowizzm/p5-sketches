@@ -1,3 +1,11 @@
+ /* Raymond G McCord (slow_izzm)
+   06/05/2016
+   
+   This work is licensed under a Creative Commons 3.0 License.
+    (Attribution - NonCommerical - ShareAlike)
+ 		http://creativecommons.org/licenses/by-nc-sa/3.0/
+*/
+
 var amt = 33,
     res = 33,
     spd = 300,
@@ -13,13 +21,6 @@ function setup() {
 
 function draw() {
   background(7, 7, 7);
-  /* Raymond G McCord (slow_izzm)
-   06/05/2016
-   
-   This work is licensed under a Creative Commons 3.0 License.
-    (Attribution - NonCommerical - ShareAlike)
- 		http://creativecommons.org/licenses/by-nc-sa/3.0/
-*/
   
   push();
   translate(width / 2, height / 2);
