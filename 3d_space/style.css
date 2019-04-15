@@ -1,0 +1,7 @@
+html,
+body {
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: rgb(35,25,90);
+}

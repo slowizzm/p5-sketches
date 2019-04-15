@@ -1,0 +1,83 @@
+body {    
+  font-size: 12px;
+  background-color: hsl(249, 30%, 10%);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+canvas {
+  object-fit: cover;
+  width: 100vw !important;
+  height: 100vh !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -100;
+  margin: 0;
+  padding: 0;
+}
+
+button, input {
+  color:  hsla(21, 9%, 92%,0.9);
+  font-family: 'Avenir', monospace;
+  font-size: 1em;
+  background-color: hsla(21, 9%, 92%,0.3);
+  border: none;
+  margin: 10px;
+}
+
+
+p {
+  color: hsl(21, 9%, 92%);
+  font-family: 'Avenir', monospace;
+  font-size: 1em;
+}
+
+#menu {
+  width: 100vw;
+  height: 20vh;
+}
+
+#mouseArea {
+  position: fixed;
+  top: 0;
+}
+
+#interface {
+  position: fixed;
+  transition: 1s ease all;
+  margin-bottom: 150px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+input[type=number]{
+  -moz-appearance: textfield;
+  appearance: textfield;
+  width: 5em;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.slider {
+  padding:0;
+  margin:15px;
+  -webkit-appearance: none;
+  appearance: none;
+  
+  background: hsla(21, 9%, 92%,0.3);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}

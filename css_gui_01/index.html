@@ -1,0 +1,35 @@
+<!DOCTYPE html><html><head>
+  <script src="p5.min.js"></script>
+  <script src="p5.dom.min.js"></script>
+  <script src="p5.sound.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+
+</head>
+
+<body>
+
+  <div id="mouseArea" onmouseover="showInterface()" onmouseout="hideInterface()">
+    <p id="menu">MENU</p>
+    <div id="interface">
+      <input type="range" min="0" max="5" step="0.1" class="slider" value="1" id="align">
+      <input type="range" min="0" max="5" step="0.1" class="slider" value="1" id="cohesion">
+      <input type="range" min="0" max="5" step="0.1" class="slider" value="1" id="separation">
+      <button onclick="randomColor()">col</button>
+      <button onclick="randomScale()">scale</button>
+      <!--         <button onclick="btn3()">snow</button>
+        <button onclick="btn4()">btn</button>
+        <button onclick="btn5()">btn</button>
+        <button onclick="btn6()">btn</button>
+        <button onclick="btn7()">btn</button> -->
+      <button onclick="search()">search</button>
+      <input type="number" step="1" name="size" id="size" placeholder="size">
+    </div>
+  </div>
+  <script src="js/helpers.js"></script>
+  <script src="sketch.js"></script>
+
+
+
+
+</body></html>

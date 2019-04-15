@@ -1,0 +1,55 @@
+body {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	align-content: center;
+}
+
+canvas {
+	display: block;
+}
+
+#settings {
+	display: block;
+	position: absolute;
+	color: white;
+	background-color: rgb(50, 50, 50, 0.9);
+	border-radius: 10;
+	opacity: 0.5;
+	font-family: monospace;
+	top: 25vh;
+	padding: 10px;
+	transition: all .01s ease-in-out;
+
+}
+
+#settings:hover {
+	opacity: 1;
+	box-shadow: 1px 1px 3px 1px #00000033;
+
+	/* transform: scale(1.1); */
+}
+
+.btn-group button {
+	background-color: #1b1212;
+	/* Green background */
+	color: white;
+	/* White text */
+	padding: 10px 24px;
+	/* Some padding */
+	cursor: pointer;
+	/* Pointer/hand icon */
+	width: 100%;
+	display: block;
+	/* Make the buttons appear below each other */
+}
+
+.btn-group button:not(:last-child) {
+	border-bottom: none;
+	/* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+	background-color: #464646;
+}

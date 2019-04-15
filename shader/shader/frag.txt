@@ -1,0 +1,29 @@
+precision mediump float;
+
+varying vec2 vTexCoord;
+
+uniform sampler2D tex0;
+uniform vec2 resolution;
+
+
+float amt = 0.07; // the amount of displacement, higher is more
+float squares = 133.0; // the number of squares to render vertically
+
+void main() {
+  float aspect = resolution.x / resolution.y;
+  float offset = amt * 0.3;
+
+  vec2 uv = vTexCoord;
+  uv.y = 1.0 - uv.y;
+
+  vec2 tc = uv;
+
+  uv -= 0.5;
+
+  uv.x *= aspect;
+  vec2 tile = fract(tc * squares/(uv.x*33.0) + offset) * amt;
+	
+  vec4 tex = texture2D(tex0, tc + tile - offset);
+
+  gl_FragColor = tex;
+}

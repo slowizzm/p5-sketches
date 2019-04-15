@@ -1,0 +1,11 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at center, #6a0071, #1a1546 80%);
+  height: 100vh;
+  width: 100vw;
+}
+
+canvas {
+  display: block;
+}

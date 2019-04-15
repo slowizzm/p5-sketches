@@ -1,0 +1,14 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.world {
+	background-color: rgb(217, 217, 217);
+}
+
+.nature {
+	background-color: rgb(0, 0, 0);
+	color: rgb(217, 217, 217);
+}
