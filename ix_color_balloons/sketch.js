@@ -5,24 +5,22 @@ let cols = ['rgba(208,196,170,.3)',
   'rgba(228,147,137,.3)'
 ];
 
-let circLetters = ['C',
+let ltrs = ['C',
   'O',
   'L',
   'O',
   'R'
 ];
-let balloon = [];
-let drag = [];
+let balloons = [];
+let c = 0;
 
 function setup() {
   createCanvas(375, 667);
   noStroke();
-  for (let i = 1; i <= 6; i++) {
-    let b = new Balloon(i * 60, height * 0.4, 77, i - 1);
-    balloon.push(b);
-  }
-  for (let i = 0; i < balloon.length; i++) {
-    drag[i] = false;
+  for (let i = 1; i < 6; i++) {
+
+    balloons.push(new Balloon(i * 60, height * 0.4, 77, cols[c], ltrs[c]));
+    c++
   }
 }
 
@@ -34,25 +32,26 @@ function draw() {
   fill(151, 147, 135);
   text("Click and drag balloon up or down, release to return.", width * 0.5, height * 0.05);
   pop();
-  for (let i = 0; i < 5; i++) {
-    let startPos = createVector(balloon[i].pos.x, height * 0.4);
 
-    if (!drag[i]) {
-      balloon[i].render(1,startPos);
+  balloons.forEach((balloon, index) => {
+    let startPos = createVector(balloon.pos.x, height * 0.4);
+
+    if (!balloon.isDraggable) {
+      balloon.render(1, startPos);
     } else {
-      balloon[i].update(0);
+      balloon.update(0);
     }
-    balloon[i].display(i);
-  }
+    balloon.display();
+  });
 }
 
 function mousePressed() {
   let distance = [];
-  for (i = 0; i < balloon.length; i++) {
-    let d = [dist(mouseX, mouseY, balloon[i].pos.x, balloon[i].pos.y)];
+  for (i = 0; i < balloons.length; i++) {
+    let d = [dist(mouseX, mouseY, balloons[i].pos.x, balloons[i].pos.y)];
     distance.push(d);
-    if (distance[i] < balloon[i].size / 3) {
-      drag[i] = true;
+    if (distance[i] < balloons[i].size / 3) {
+      balloons[i].isDraggable = true;
       //console.log(i);
     }
   }
@@ -60,8 +59,8 @@ function mousePressed() {
 
 //touchEnded on mobile
 function mouseReleased() {
-  for (i = 0; i < balloon.length; i++) {
-    drag[i] = false;
+  for (i = 0; i < balloons.length; i++) {
+    balloons[i].isDraggable = false;
     //console.log(i+ " " + "released");
   }
 }
@@ -69,13 +68,13 @@ function mouseReleased() {
 //touchMoved on mobile
 function mouseDragged() {
   let distance = [];
-  for (i = 0; i < balloon.length; i++) {
-    let d = [dist(mouseX, mouseY, balloon[i].pos.x, balloon[i].pos.y)];
+  for (i = 0; i < balloons.length; i++) {
+    let d = [dist(mouseX, mouseY, balloons[i].pos.x, balloons[i].pos.y)];
     distance.push(d);
-    if (drag[i] === true) {
+    if (balloons[i].isDraggable === true) {
       //console.log(i+" "+"drag");
       //balloon[i].pos.x = mouseX;
-      balloon[i].pos.y = mouseY;
+      balloons[i].pos.y = mouseY;
       //console.log(i);
     }
   }
