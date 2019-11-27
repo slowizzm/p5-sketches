@@ -2,42 +2,42 @@
 click to add vertex points to build shape, click and drag a vertex point to update position, double click on vertex point to remove
 */
 
-let ib, vertexPoint = [];
-
-let btn_fill, btn_stroke, slide_stroke;
-
-let onDraggable = false;
-let btn;
-
-let btn_clear, isCleared = false,
-  chkbx_clear, chkbx_fill;
-
-let swapType;
+let ib, vertexPoint = [],
+  btn_fill, btn_stroke, btn_clearShape, btn_printConsole, btn_clearConsole, isCleared = false,
+  slide_stroke,
+  onDraggable = false,
+  chkbx_clear, chkbx_fill,
+  swapType;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight - 100);
-  btn = createButton('print vertex points');
-  btn.mouseClicked(showPoints);
+  createCanvas(window.innerWidth, window.innerHeight - 120);
+  btn_printConsole = createButton('print vertex points');
+  btn_printConsole.mouseClicked(ConsoleLogShape);
+  btn_printConsole.position(10, height + 15);
+
+  btn_clearConsole = createButton('clear console');
+  btn_clearConsole.mouseClicked(ClearConsoleLog);
+  btn_clearConsole.position(150, height + 15);
 
 
   swapType = createSelect();
   swapType.option('Line');
   swapType.option('Curve');
-  swapType.position(150, height * 1.005);
+  swapType.position(280, height + 15);
 
   ib = new InteractiveBeginShape();
-  btn_clear = createButton('clear');
-  btn_clear.position(20, windowHeight - 50);
-  btn_clear.mouseClicked(clearCtx);
+  btn_clearShape = createButton('clear shape');
+  btn_clearShape.position(20, height + 70);
+  btn_clearShape.mouseClicked(clearCtx);
 
   chkbx_clear = createCheckbox('closeShape', false);
   chkbx_clear.changed(closeShape);
-  chkbx_clear.position(100, windowHeight - 50);
+  chkbx_clear.position(150, height + 70);
   chkbx_clear.style('color', 'white');
 
   chkbx_fill = createCheckbox('fillShape', false);
   chkbx_fill.changed(fillShape);
-  chkbx_fill.position(210, windowHeight - 50);
+  chkbx_fill.position(260, height + 70);
   chkbx_fill.style('color', 'white');
 }
 
@@ -50,7 +50,7 @@ function draw() {
   }
 }
 
-function showPoints() {
+function ConsoleLogShape() {
   switch (swapType.value()) {
     case 'Line':
       console.log('beginShape(); ');
@@ -69,7 +69,9 @@ function showPoints() {
   }
 }
 
-
+function ClearConsoleLog() {
+  console.clear();
+}
 
 function mousePressed() {
   for (let i = 0; i < vertexPoint.length; i++) {
