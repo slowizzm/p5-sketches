@@ -1,13 +1,13 @@
-let cols, rows;
-let w = 100,
-	h = 300,
-	s = 20;
+const terrain = [];
 
-let speed = 0;
-let terrain = [];
+let cols, rows,
+    w = 100,
+	h = 300,
+	s = 20,
+    speed = 0;
 
 function setup() {
-	createCanvas(windowWidth, windowHeight, WEBGL);
+	createCanvas(windowWidth-4, windowHeight-4, WEBGL);
 
 	cols = w / s;
 	rows = h / s;
@@ -48,5 +48,5 @@ function draw() {
 }
 
 function windowResized() {
-	resizeCanvas(windowWidth, windowHeight);
+	resizeCanvas(windowWidth-4, windowHeight-4);
 }
