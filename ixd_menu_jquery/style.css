@@ -1,0 +1,61 @@
+@import url("https://use.typekit.net/xtt3pjn.css");
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: poppins, sans-serif;
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+}
+
+.menu-container {
+  padding: 3vw;
+  box-sizing: border-box;
+  position: relative;
+  background: #111;
+  background: #eee;
+  z-index: 120;
+}
+
+.menu-container>h1 {
+  padding: .5vw;
+  font-size: 4vw;
+  width: 100%;
+  color: #eee;
+  background: #111;
+  box-sizing: border-box;
+  padding: 1vw 2vw 2vw 2vw;
+  text-transform: uppercase;
+}
+
+.menu-container .item-container {
+  overflow: hidden;
+  background: #111;
+  width: 100%;
+  display: flex;
+}
+
+.menu-container .item-container .item {
+  background: #eee;
+  display: inline-block;
+  height: calc(54vw - 11.5vw);
+  border-radius: 30%;
+  width: 26.5%;
+  /*   cursor: pointer; */
+}
+
+.menu-container .item-container .item h1 {
+  color: #111;
+  line-height: calc(54vw - 11.5vw);
+  text-align: center;
+  transform: rotate(-90deg);
+  font-size: 3vw;
+  letter-spacing: .1vw;
+  text-transform: uppercase;
+}

@@ -8,7 +8,7 @@ function setup() {
 }
 
 function draw() {
-	clear();
+	background('#131721');
 
 	aurora.run();
 }
@@ -44,14 +44,14 @@ class Aurora {
 		fill(217, 0, 127);
 
 		push();
-		fill(3);
+		fill('#131721');
 		translate(width * 0.5, height * 0.9);
 		ellipse(-2, -289, 67);
 		triangle(-135, -30, 0, -235, 131, -30);
 		pop();
 
 		push();
-		fill(51.100);
+		fill('#341334');
 		translate(width * 0.5, height * 0.9);
 		ellipse(0, -290, 67);
 		triangle(-133, -30, 0, -233, 133, -30);

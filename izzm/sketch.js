@@ -1,55 +1,58 @@
-let img;
+let img,
+  scl = 13;
 
-let izzms = [],
-	sizer = 13;
+const lines = [];
 
 function preload() {
-	img = loadImage("images/izzm.png");
+  img = loadImage('images/izzm.png');
 }
 
 function setup() {
-	createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth - 4, windowHeight - 4);
 
-	var prox = 20,
-		row = ceil(width / prox) + 1,
-		column = ceil(height / prox) + 1;
+  let prox = 20,
+    row = ceil(width / prox) + 1,
+    col = ceil(height / prox) + 1;
 
-	for (var j = 0; j < column; j++) {
-		for (var i = 0; i < row; i++) {
-			izzms.push(new p5.Vector(prox * i, prox * j));
-		}
-	}
+  for (let y = 0; y < col; y++) {
+    for (let x = 0; x < row; x++) {
+      lines.push({
+        x: prox * y,
+        y: prox * x
+      });
+    }
+  }
 }
 
 function draw() {
-	background(255);
-	noFill();
-	stroke(51);
-	strokeWeight(1);
-	for (var i = izzms.length - 1; i >= 0; i--) {
-		var h = calcVec(izzms[i].x - mouseX, izzms[i].y - mouseY);
-		rect(
-			izzms[i].x,
-			izzms[i].y,
-			izzms[i].x + sizer * cos(h.heading()),
-			izzms[i].y + sizer * sin(h.heading()));
-	}
-	push();
-	fill(51);
-	noStroke();
-	rect(0, 0, width, height * 0.3);
-	rect(0, height * 0.7, width, height);
-	pop();
+  background(255);
+  noFill();
+  stroke(51);
+  strokeWeight(1);
+  for (let i = lines.length - 1; i >= 0; i--) {
+    let h = calcVec(lines[i].x - mouseX, lines[i].y - mouseY);
+    rect(
+      lines[i].x,
+      lines[i].y,
+      lines[i].x + scl * cos(h.heading()),
+      lines[i].y + scl * sin(h.heading()));
+  }
+  push();
+  fill(51);
+  noStroke();
+  rect(0, 0, width, height * 0.3);
+  rect(0, height * 0.7, width, height);
+  pop();
 
-	imageMode(CENTER);
-	image(img, width / 2, height / 2, 1920 / 2, 1080 / 2);
+  imageMode(CENTER);
+  image(img, width * 0.5, height * 0.5, 1920 * 0.5, 1080 * 0.5);
 }
 
 
-function calcVec(x, y) {
-	return new p5.Vector(y - x, -x - y);
+const calcVec = (x, y) => {
+  return createVector(y - x, -x - y);
 }
 
 function windowResized() {
-	resizeCanvas(windowWidth, windowHeight);
+  resizeCanvas(windowWidth - 4, windowHeight - 4);
 }

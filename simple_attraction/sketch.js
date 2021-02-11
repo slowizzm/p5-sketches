@@ -1,39 +1,27 @@
 //NoC
 
-let seekers = [], seeked = [];
-const NUM_SEEKERS = 33;
+const seekers = [],
+  NUM_SEEKERS = 33;
+
+let seeked;
 
 
 function setup() {
-  createCanvas(windowWidth,windowHeight);
+  createCanvas(windowWidth - 4, windowHeight - 4);
 
   for (let i = 0; i < NUM_SEEKERS; i++) {
-    let s = new Seeker(random(width),random(height));
-    seekers.push(s);
+    seekers[i] = new Seeker(random(width), random(height));
   }
 
-  for (let i = 0; i < 1; i++) {
-    let s = new Seeked();
-    seeked.push(s);
-  }
-  
+  seeked = new Seeked();
 }
 
 function draw() {
-  background(51);
-	
-  // for (let i = 0; i < seeked.length; i ++) {
-  //   seeked[i].update();
-  //   seeked[i].display();
-  //   seeked[i].edges();
-  // }
+  background(13, 17, 21);
 
-  for (let i = 0; i < seekers.length; i ++) {
-    seekers[i].seek(createVector(mouseX,mouseY));
-    seekers[i].update();
-    seekers[i].display();
-  }
+  seekers.forEach(seeker => {
+    seeker.render(createVector(seeked.pos.x, seeked.pos.y));
+  });
+
+  seeked.render();
 }
-
-
-

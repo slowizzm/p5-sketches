@@ -1,46 +1,20 @@
-//prototype for a student
-
-let hitPoints = [];
+const hitPoints = [];
 
 function setup() {
-	createCanvas(window.innerWidth-4,window.innerHeight-4);
-	
-	for (let i = 0; i < 333; i++) {
-		let hp = new HitPoint(random(width),random(height),33);
-		hitPoints.push(hp);
-	}
+  createCanvas(window.innerWidth - 4, window.innerHeight - 4);
+
+  for (let i = 0; i < 333; i++) {
+    hitPoints[i] = new HitPoint({
+      x: random(width),
+      y: random(height)
+    }, 100, 300);
+  }
 }
 
 function draw() {
-	background(51);
-	
-	for (let i = 0; i < hitPoints.length; i++) {
-		hitPoints[i].run();
-	}
-}
+  background('#590a30');
 
-function HitPoint(_x,_y,_r) {
-	this.pos = createVector(_x, _y);
-	this.r = _r;
-
-	this.update = function() {
-		this.d = dist(mouseX, mouseY, this.pos.x, this.pos.y);
-		if (this.d <= this.r) {
-			if (mouseIsPressed) {
-			fill('#C9BC0F');
-			}
-		} else {
-			fill('#28726E');
-		}
-	}
-
-	this.display = function() {
-		noStroke();
-		ellipse(this.pos.x,this.pos.y,this.r);
-	}
-
-	this.run = function() {
-		this.update();
-		this.display();
-	}
+  for (let i = 0; i < hitPoints.length; i++) {
+    hitPoints[i].render();
+  }
 }

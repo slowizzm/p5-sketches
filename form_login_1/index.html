@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head>
+  <script src="p5.js"></script>
+  <script src="p5.dom.min.js"></script>
+  <script src="p5.sound.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1175.5 2436">
+      <defs>
+
+        <mask id="mask" x="0" y="0" width="1175.5" height="2436" maskUnits="userSpaceOnUse">
+          <g transform="translate(50.5 0)">
+            <rect class="maskfill" width="1125" height="2436"></rect>
+          </g>
+        </mask>
+        <lineargradient id="linear-gradient" x1="206.6" y1="2250.17" x2="992.08" y2="255.22" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#2b00a0"></stop>
+          <stop offset="1" stop-color="#7713cd"></stop>
+        </lineargradient>
+        <lineargradient id="linear-gradient-2" x1="948.5" y1="1715.38" x2="1092.5" y2="1715.38" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#3600be"></stop>
+          <stop offset="1" stop-color="#401386"></stop>
+        </lineargradient>
+        <lineargradient id="linear-gradient-3" x1="877.41" y1="871.7" x2="816.69" y2="625.76" xlink:href="#linear-gradient-2"></lineargradient>
+        <lineargradient id="linear-gradient-4" x1="-50.5" y1="1197.5" x2="206.09" y2="1197.5" xlink:href="#linear-gradient-2"></lineargradient>
+      </defs>
+
+      <g class="mask">
+        <g id="design">
+
+          <rect id="bg" class="bg" x="50.5" width="1125" height="2436"></rect>
+          <path id="bubble-light" class="bubble-light-1" d="M1123.5,1371.5C1104,1685,865,1954,562.5,1932.5c-309.83,0-545.5-247.5-561-561,0-309.83,254.5-584.5,561-561C872.33,810.5,1123.5,1061.67,1123.5,1371.5Z" transform="translate(50.5 0)"></path>
+          <path id="bubble-light-2" data-name="bubble-light" class="bubble-light-2" d="M976.5,1371.5c25.5,230.5-185.35,414-414,414-216.5-19.5-414-185.35-414-414S350,986,562.5,957.5C791.15,957,951.36,1144.24,976.5,1371.5Z" transform="translate(50.5 0)"></path>
+          <path id="bubble-heavy" class="bubble-heavy-1" d="M1092.5,1715.5c0,39.76-20.5,72.5-72,72-52.5-1.5-72-32.24-72-72s19.5-75.5,72-72A72,72,0,0,1,1092.5,1715.5Z" transform="translate(50.5 0)"></path>
+          <path id="bubble-heavy-2" data-name="bubble-heavy" class="bubble-heavy-2" d="M979.5,746.5c11.5,77.5-59.55,133-133,133a133,133,0,1,1,133-133Z" transform="translate(50.5 0)"></path>
+          <path id="bubble-heavy-3" data-name="bubble-heavy" class="bubble-heavy-3" d="M205.5,1197.5c7.5,88.5-57.31,128-128,128a128,128,0,0,1-128-128c.5-79.5,57.31-128,128-128A128,128,0,0,1,205.5,1197.5Z" transform="translate(50.5 0)"></path>
+        </g>
+      </g>
+      <g id="ui">
+
+        <text id="welcome" class="welcome" transform="translate(150 825)">Welcome Back!</text>
+      </g>
+    </svg>
+    <form name="login">
+      <div>
+        <input class="input-box-userid" type="text" placeholder="Username" name="userid"><br>
+        <input class="input-box-pswrd" type="text" placeholder="Password" name="pswrd"><br>
+        <input type="button" class="btn default dropShadow" onclick="checkUserInfo(this.form)" value="Login">
+      </div>
+    </form>
+  </div>
+
+
+
+
+  <script src="sketch.js"></script>
+
+
+</body></html>

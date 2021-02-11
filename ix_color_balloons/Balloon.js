@@ -59,6 +59,15 @@ class Balloon {
   balloon() {
     fill(this.col);
     ellipse(this.pos.x + 5, this.pos.y, this.size);
+
+    push();
+    fill(33, 30);
+    textSize(42);
+    textAlign(CENTER);
+    textStyle(BOLD);
+    text(this.ltr, this.pos.x + 8, this.pos.y + 16);
+    pop();
+
     push();
     fill(255);
     textSize(42);
@@ -79,23 +88,30 @@ class Balloon {
     return this;
   }
 
-  edges() {
-    if (this.pos.x <= 0 || this.pos.x >= width) {
-      this.vel.x *= -1;
-    }
-    if (this.pos.y <= 0 || this.pos.y >= height) {
-      this.pos.y = mouseY;
-      this.vel.y *= -1;
-    }
+  checkIfBalloonReachedTop() {
+    return (this.pos.y <= 0);
+  }
 
+  checkIfBalloonReachedBottom() {
+    return (this.pos.y >= height);
+  }
+
+  balloonSlingBack() {
+    if (this.checkIfBalloonReachedTop()) {
+      this.pos.y = 0;
+      this.vel.y *= -1;
+    } else if (this.checkIfBalloonReachedBottom()) {
+      this.pos.y = height;
+      this.vel.y *= -1
+    }
     return this;
   }
 
   display() {
-    return this.balloon().edges();
+    return this.balloon().balloonSlingBack();
   }
 
   render(v, targ) {
-    return this.update(v).seek(targ).arrive(targ);
+    return this.update(v) /*.seek(targ)*/ .arrive(targ);
   }
 }

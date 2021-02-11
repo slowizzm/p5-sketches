@@ -1,0 +1,13 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.elt_particleCount {
+	color: rgb(217, 217, 217);
+}
+
+.elt_lineLen {
+	color: rgb(217, 217, 217);
+}

@@ -1,0 +1,41 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: none;
+}
+
+body {
+  background: rgba(16, 31, 35, 1);
+}
+
+[draggable] {
+  cursor: grab;
+  cursor: -moz-grab;
+}
+
+[draggable=true] {
+  -khtml-user-drag: element;
+}
+
+.drop-area {
+  background: #ccc3;
+  position: absolute;
+  width: 400px;
+  height: 400px;
+}
+
+.draggable, .dragging {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  z-index: 5;
+  fill: #ccc;
+}
+
+.dragging {
+  display: none;
+}

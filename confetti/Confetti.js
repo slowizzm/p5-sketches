@@ -8,6 +8,7 @@ class Confetti {
     this.amp = random(2, 30);
     this.phase = random(0.5, 2);
     this.size = random(width / 25, height / 50);
+    this.form = round(random(0, 1));
   }
 
   confettiDisplay() {
@@ -20,7 +21,11 @@ class Confetti {
     rotate(this.time);
     rectMode(CENTER);
     scale(cos(this.time / 4), sin(this.time / 4));
-    rect(0, 0, this.size, this.size / 2);
+    if (this.form === 0) {
+      rect(0, 0, this.size, this.size / 2);
+    } else {
+      ellipse(0, 0, this.size);
+    }
     pop();
 
     this.time = this.time + 0.1;

@@ -1,0 +1,10 @@
+{
+  "characters" : [{
+    "main" : "Jane",
+  "supporting" : "Jack"
+  },
+  {
+    "main" : "Jelly",
+    "supporting" : "Peanut Butter"        
+  }]
+}

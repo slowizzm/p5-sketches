@@ -1,0 +1,58 @@
+html,
+body {
+  margin: 20px;
+  padding: 0;
+}
+
+svg{
+  background-color: hsla(200, 70%, 10%, 0.8);
+}
+
+/* canvas {
+  display: block;
+} */
+
+.atmos,
+.darkness {
+  fill: #0e2740;
+}
+
+.trees {
+  fill: hsla(200, 90%, 10%, 1);
+  ;
+}
+
+.atmos {
+  opacity: 0.22;
+}
+
+
+.clouds {
+  fill: #23609b;
+  opacity: 0.15;
+}
+
+.moon_2,
+.crater {
+  fill: #f4e9aa;
+}
+
+.moon_1 {
+  fill: #e4d894;
+}
+
+.moon_0 {
+  fill: #d5c87e;
+}
+
+.shadow {
+  fill: #757060;
+}
+
+.highlight {
+  fill: #1f767f;
+}
+
+.windows {
+  fill: hsla(0, 90%, 50%, 1);
+}

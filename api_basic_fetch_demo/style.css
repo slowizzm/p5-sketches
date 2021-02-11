@@ -1,0 +1,27 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+
+.btn {
+  border: 2px solid rgba(217);
+  padding: 14px 28px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 25px;
+  background: rgba(217, 217, 217, 0.3);
+  padding: 20px;
+  width: 200px;
+  height: 60px;
+  color: #FFFFFF;
+  outline: none;
+}
+
+.default:hover {
+  background: #e7e7e7BB;
+  color: black;
+  cursor: pointer;
+}

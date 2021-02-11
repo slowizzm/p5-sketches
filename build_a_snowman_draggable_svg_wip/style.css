@@ -1,0 +1,238 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: none;
+}
+
+body {
+  background: rgba(16, 31, 35, 1);
+}
+
+/*----------------------------------------------------Draggable  */
+[draggable] {
+  cursor: move;
+}
+
+.stage {
+  background: #ccc3;
+  position: absolute;
+  width: 400px;
+  height: 1000px;
+}
+
+.drop-area {
+  background: #ccc3;
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  left: 500px;
+}
+
+.draggable,
+.dragging {
+  position: absolute;
+  z-index: 1;
+}
+
+.dragging {
+  display: none;
+}
+
+.hold {
+  border: solid 5px #ccc;
+}
+
+/*----------------------------------------------------Containers  */
+
+.snowman-container {
+  
+}
+.arm-left-container,
+.snowman-shadow-container,
+.hat-group-container,
+.body-group-container,
+.head-group-container,
+.mouth-group-container,
+.nose-group-container,
+.eyes-group-container,
+.scarf-group-container,
+.arm-right-group-container,
+.buttons-group-container {
+/*   border: solid 1px #ccc; */
+}
+
+.arm-left-container {
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 10%;
+}
+
+.snowman-shadow-container {
+  top: 30px;
+  left: 190px;
+  width: 50%;
+  height: 2%;
+}
+
+.hat-group-container {
+  top: 150px;
+  left: 10px;
+  width: 35%;
+  height: 10%;
+}
+
+.body-group-container {
+  top: 150px;
+  left: 200px;
+  width: 30%;
+  height: 11%;
+}
+
+.head-group-container {
+  top: 350px;
+  left: 200px;
+  width: 20%;
+  height: 8%;
+}
+
+.mouth-group-container {
+  top: 350px;
+  left: 10px;
+  width: 10%;
+  height: 2%;
+}
+
+.nose-group-container {
+  top: 550px;
+  left: 200px;
+  width: 10%;
+  height: 2%;
+}
+
+.eyes-group-container {
+  top: 550px;
+  left: 10px;
+  width: 15%;
+  height: 1%;
+}
+
+.scarf-group-container {
+  top: 750px;
+  left: 200px;
+  width: 25%;
+  height: 13%;
+}
+
+.arm-right-group-container {
+  top: 750px;
+  left: 10px;
+  width: 20%;
+  height: 8%;
+}
+
+.buttons-group-container {
+  top: 650px;
+  left: 200px;
+  width: 5%;
+  height: 6%;
+}
+
+/*----------------------------------------------------Assets  */
+
+.snowman-shadow,
+.arm-right-shadow,
+.body-hat-shadow {
+  fill: #d8eaef;
+}
+
+.arm-left,
+.arm-right,
+.nose-shadow {
+  fill: #654321;
+}
+
+.hat-top {
+  fill: #222;
+}
+
+
+
+.hat-ring,
+.scarf-ring,
+.scarf-hang {
+  fill: #cc231e;
+}
+
+.head-rim,
+.hat-highlght,
+.body-rim {
+  opacity: 0.3;
+}
+
+.hat-highlight {
+  fill: url(#linear-gradient);
+}
+
+.hat-rim {
+  fill: #e7e7e7;
+  opacity: 0.03;
+}
+
+.hat-brim,
+#mouth-group,
+#eyes-group,
+#buttons-group {
+  fill: #111;
+}
+
+.body,
+.head {
+  fill: #eefdff;
+}
+
+.body-rim {
+  fill: url(#linear-gradient-2);
+}
+
+.body-hat-shadow {
+  opacity: 0.25;
+}
+
+.head-rim {
+  fill: url(#linear-gradient-3);
+}
+
+.nose {
+  fill: #f58d0f;
+}
+
+.nose-highlight {
+  fill: #f8c154;
+  opacity: 0.17;
+}
+
+.scarf-hang-strings,
+.scarf-hang-stripe,
+.scarf-ring-stripes {
+  fill: #f4f4f4;
+}
+
+.scarf-hang-stripe {
+  stroke: #f4f4f4;
+  stroke-linejoin: round;
+  stroke-width: 0.5px;
+}
+
+.scarf-hat-shadow {
+  fill: #7f231e;
+}
+
+.hat-front {
+  z-index: 11 !important; 
+  fill: #2222;
+}

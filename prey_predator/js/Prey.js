@@ -1,6 +1,8 @@
+'use strict'
+
 class Prey {
   constructor() {
-    this.pos = createVector(random(0, width), random(20, height));
+    this.pos = createVector(random(width), random(20, height));
     this.vel = createVector(random(0.1, 2), 0);
     this.acc = createVector(0, 0);
 
@@ -8,26 +10,26 @@ class Prey {
     this.maxSteering = 0.5;
   }
 
-  behaviors(_predator) {
-    this.flee(_predator);
+  behaviors(predator) {
+    this.flee(predator);
 
     return this;
   }
 
-  applyForce(_f) {
-    this.acc.add(_f);
+  applyForce(f) {
+    this.acc.add(f);
   }
 
 
-  flee(_predator) {
+  flee(predator) {
     let desired = 0;
     let val = behaviorSelect.value();
     switch (val) {
       case 'Attract':
-        desired = p5.Vector.sub(_predator.pos, this.pos);
+        desired = p5.Vector.sub(predator.pos, this.pos);
         break;
       case 'Repulse':
-        desired = p5.Vector.sub(this.pos, _predator.pos);
+        desired = p5.Vector.sub(this.pos, predator.pos);
         break;
     }
     let distance = desired.mag();
@@ -38,7 +40,7 @@ class Prey {
       desired.normalize();
       desired.mult(map(distance, 130, 0, 0, this.maxSpeed));
 
-      let steer = p5.Vector.sub(desired, this.velocity);
+      let steer = p5.Vector.sub(desired, this.v);
       steer.limit(this.maxForce);
       this.applyForce(steer);
     }
@@ -75,7 +77,7 @@ class Prey {
     return this;
   }
 
-  render(_predator) {
-    return this.update().display().behaviors(_predator);
+  render(predator) {
+    return this.update().display().behaviors(predator);
   }
 }

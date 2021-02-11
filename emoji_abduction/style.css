@@ -1,0 +1,15 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+}
+
+body {
+  background: rgb(183, 43, 42);
+  background: linear-gradient(0deg, rgba(183, 43, 42, 1) 0%, rgba(246, 77, 50, 1) 12%, rgba(246, 77, 50, 1) 26%, rgba(203, 111, 115, 1) 43%, rgba(120, 68, 119, 1) 59%, rgba(79, 40, 105, 1) 100%) no-repeat;
+}
+
+canvas {
+  display: block;
+}

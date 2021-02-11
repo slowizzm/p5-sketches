@@ -4,7 +4,7 @@ let death = 1000;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    kinectron = new Kinectron("172.16.224.32");
+    kinectron = new Kinectron('192.168.0.10');
     kinectron.makeConnection();
     kinectron.startTrackedBodies(bodyTracked);
     background(0);

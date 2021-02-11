@@ -1,10 +1,10 @@
 class Button {
-	constructor(_pos, _fade, _col) {
-		this.pos = createVector(_pos.x, _pos.y);
+	constructor(pos, fade, col) {
+		this.pos = createVector(pos.x, pos.y);
 		this.res = createVector(150, 30);
 		this.a = 0;
-		this.fade = _fade;
-		this.col = _col;
+		this.fade = fade;
+		this.col = col;
 	}
 
 	display() {
@@ -26,8 +26,8 @@ class Button {
 		return this;
 	}
 
-	hover(_x, _y, _w, _h) {
-		if (mouseX > _x - (_w >> 1) && mouseX < _x + (_w >> 1) && mouseY > _y - (_h >> 1) && mouseY < _y + (_h >> 1)) {
+	hover(x,y,w, h) {
+		if (mouseX > x - (w*0.5) && mouseX < x + (w*0.5) && mouseY > y - (h*0.5) && mouseY < y + (h*0.5)) {
 			return true;
 		} else {
 			return false;

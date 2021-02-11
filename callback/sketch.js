@@ -1,20 +1,20 @@
-function setup() {
-	createCanvas(windowWidth, windowHeight);
-	getPass(toPass);
-	funct('b', function(_x) {
-		print(_x);
-		return _x;
-	});
-}
-
-function getPass(_pass) {
-	_pass();
+function getPass(pass) {
+  pass();
 }
 
 function toPass() {
-	print('a');
+  console.log('hello');
 }
 
-function funct(_a, _foo) {
-	_foo(_a);
+function func(callback, arg) {
+  callback(arg)
 }
+
+
+
+getPass(toPass);
+
+  func((x) => {
+    console.log(x);
+    return x;
+  }, 'world');

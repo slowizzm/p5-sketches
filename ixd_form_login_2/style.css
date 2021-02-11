@@ -1,0 +1,142 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: none;
+}
+
+.container {
+  width: 400px;
+}
+
+.bg {
+  fill: #284160;
+}
+
+.bottom-highlight {
+  fill: url(#linear-gradient);
+}
+
+.bottom-main {
+  fill: url(#linear-gradient-2);
+}
+
+.arrow {
+  fill: none;
+  stroke: #ff716f;
+  stroke-miterlimit: 10;
+  stroke-width: 8px;
+  stroke-linecap: round;
+}
+
+.top-highlight {
+  fill: url(#linear-gradient-3);
+}
+
+.top-main {
+  fill: url(#linear-gradient-4);
+}
+
+.top-left-circ {
+  fill: #ff9f7b;
+  opacity: 0.4;
+}
+
+.login {
+  position: absolute;
+  top: 3px;
+}
+
+.input-box-userid {
+  border: 2px solid #FF716F;
+  font-size: 1.75em;
+  padding: .25em .5em .3125em;
+  border-radius: 2rem;
+  background: transparent;
+  transition: all .100s;
+  position: absolute;
+  left: 3.75rem;
+  top: 23.25rem;
+  width: 15.25rem;
+  height: 2.25rem;
+  letter-spacing: 0.13em;
+  color: rgba(255, 255, 255, .5);
+}
+
+.input-box-pswrd {
+  border: 2px solid #FF716F;
+  font-size: 1.75em;
+  padding: .25em .5em .3125em;
+  border-radius: 2rem;
+  background: transparent;
+  transition: all .100s;
+  position: absolute;
+  left: 3.75rem;
+  top: 27.75rem;
+  width: 15.25rem;
+  height: 2.25rem;
+  letter-spacing: 0.13em;
+  color: rgba(255, 255, 255, .5);
+}
+
+.input-box-userid:focus,
+.input-box-pswrd:focus {
+  outline: none;
+  color: rgba(255, 255, 255, .75);
+  border-color: rgba(255, 255, 255, .75);
+}
+
+::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, .5);
+  text-shadow: 0 0 .125em transparent;
+  transition: all .25s;
+}
+
+input:focus::-webkit-input-placeholder {
+  opacity: .5;
+}
+
+.keyup {
+  color: white;
+  border-color: white;
+  text-shadow: 0 0 .125em white;
+  box-shadow: 0 0 .25em white, inset 0 0 .25em white;
+}
+
+
+.btn {
+  font-size: 16px;
+  box-sizing: border-box;
+  border: 2px solid #FF716F;
+  border-radius: 50px;
+  background: rgba(217, 217, 217, 0.025);
+  padding: 20px;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 10.5rem;
+  top: 34rem;
+  bottom: 10rem;
+  color: #FFFFFF;
+  outline: none;
+  font-size: 16px;
+  line-height: 0.5rem;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.13em;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: rgba(217, 217, 217, 0.1);
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: translateY(1px);
+  filter: saturate(150%);
+}

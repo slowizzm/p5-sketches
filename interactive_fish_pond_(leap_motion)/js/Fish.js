@@ -2,8 +2,8 @@ class Fish {
 	constructor(x, y, varience) {
 		this.varience = varience;
 		this.pos = createVector(x, y);
-		this.vel = createVector(0, 0);
-		this.acc = createVector(0, 0);
+		this.vel = createVector();
+		this.acc = createVector();
 		this.h = 40 * this.varience;
 		this.w = 16 * this.varience;
 		this.xoff = 0;
@@ -13,14 +13,13 @@ class Fish {
 
 	update(x, y) {
 		let mouse = createVector(mouseX, mouseY);
-		let dir = createVector(0, 0);
+		let dir = createVector();
 		this.dis = dist(this.pos.x, this.pos.y, light.pos.x, light.pos.y);
 		if (this.dis < 130) {
 			dir = p5.Vector.sub(this.pos, mouse);
 		} else {
 			dir = createVector(x, y);
 		}
-		//dir = createVector(x, y);
 		this.acc = dir;
 		this.pos.add(this.vel);
 		this.vel.add(this.acc);

@@ -1,0 +1,18 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+canvas {
+  display: none;
+}
+
+
+.title {
+  font-size: 50px;
+  width: 100px;
+  height: 100px;
+  background: red;
+}

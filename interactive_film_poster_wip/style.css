@@ -1,0 +1,102 @@
+@import url("https://use.typekit.net/xtt3pjn.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: BigCaslonFB-Regular, Big Caslon FB;
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+#poster-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 1200px;
+  margin: auto;
+  animation: displayContent 2s linear;
+}
+
+@keyframes displayContent {
+  0% {
+    opacity: 0;
+  }
+
+  1% {
+    opacity: 100;
+  }
+}
+
+
+.bg,
+.eyes {
+  fill: #ed1940;
+}
+
+.trees {
+  fill: #830203;
+}
+
+.particle {
+  fill: #350909;
+}
+
+.particle-shadow {
+  opacity: 0.05;
+}
+
+.particle,
+.particle-shadow {
+  fill: #0e0304;
+}
+
+.moon {
+  fill: #fac7bf;
+}
+
+.info-container {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 150rem;
+}
+
+.title,
+.info,
+.date {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 11rem;
+  color: #ed1940;
+  letter-spacing: 2.8rem;
+  padding-left: 2.8rem;
+}
+
+.title span {
+  font-size: 9rem;
+}
+
+.info {
+  top: 2rem;
+  color: #eeeeee;
+  font-size: 1.75rem;
+  line-height: 3rem;
+  letter-spacing: 0.6rem;
+  padding-left: 0.6rem;
+  transform: translateY(-2.5rem);
+}
+
+.date {
+  color: #eeeeee;
+  font-size: 2rem;
+  letter-spacing: 1.4rem;
+  padding-left: 1.4rem;
+  transform: translateY(2rem);
+}

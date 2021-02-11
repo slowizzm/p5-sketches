@@ -11,7 +11,7 @@ class Item {
 		this.shades = 13;
 	}
 
-	expand() {
+	rise() {
 		if (this.rollOver(this.pos.x, this.pos.y, this.res.x, this.res.y)) {
 			this.scl += 1.5;
 
@@ -108,6 +108,6 @@ class Item {
 	}
 
 	render(_n, _nx, _ny, _p, _px, _py, _a2cx, _a2cy) {
-		return this.bottle().shadow().expand().info(_n, _nx, _ny).cost(_p, _px, _py).addToCart(_a2cx, _a2cy);
+		return this.bottle().shadow().rise().info(_n, _nx, _ny).cost(_p, _px, _py).addToCart(_a2cx, _a2cy);
 	}
 }

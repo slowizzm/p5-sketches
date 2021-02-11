@@ -13,7 +13,7 @@ function draw() {
 	background(255);
 
 	let timeLapsed = millis() - timeStarted;
-	strokeWeight(2 - a / 5);
+	// strokeWeight(2 - a / 5);
 
 	if (timeLapsed >= 3000) {
 		a += spd;
@@ -39,7 +39,7 @@ function draw() {
 		c += spd;
 		translate(-c * 327, -c * 152);
 		scale(c + 1);
-		strokeWeight(0.1 + (c / 4));
+		// strokeWeight(0.1 + (c / 4));
 	}
 
 	if (timeLapsed >= 8000) {
@@ -57,6 +57,10 @@ function draw() {
 	scale(1 / 24);
 
 	ellipse(325, 150, 109);
+  
+  
+  // strokeWeight(1);
+  rect(325, 151, 2, 2);
 
 	if (timeLapsed >= 9000) {
 		a = 0;

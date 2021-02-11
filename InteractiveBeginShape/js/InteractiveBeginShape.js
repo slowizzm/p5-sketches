@@ -27,24 +27,24 @@ class InteractiveBeginShape {
         for (let i = 0; i < this.point.length; i++) {
           vertex(this.point[i].x, this.point[i].y);
         }
-        if (this.isClose) {
-          endShape(CLOSE);
-        } else {
-          endShape();
-        }
         break;
+
+
       case 'Curve':
         beginShape();
         for (let i = 0; i < this.point.length; i++) {
           curveVertex(this.point[i].x, this.point[i].y);
         }
-        if (this.isClose) {
-          endShape(CLOSE);
-        } else {
-          endShape();
-        }
+
         break;
     }
+
+    if (this.isClose) {
+      endShape(CLOSE);
+    } else {
+      endShape();
+    }
+
     pop();
     return this;
   }

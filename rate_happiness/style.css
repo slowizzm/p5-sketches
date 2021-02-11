@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+.bg {
+  fill: #f7e2dc;
+}
+
+.eyebrow,
+.eye,
+.nose,
+.mouth {
+  fill: #bb472d;
+}
+
+.head,
+.frame,
+.circle,
+.numbers,
+.txt {
+  fill: transparent;
+  stroke: #bb472d;
+  stroke-miterlimit: 10;
+}
+
+.active {
+  fill: #bb472d;
+}
+
+.head,
+.eyebrow,
+.mouth,
+.eye,
+.nose,
+.frame,
+.circle,
+.numbers {
+  stroke-width: 3px;
+}
+
+.txt {
+  stroke-width: 2px;
+}

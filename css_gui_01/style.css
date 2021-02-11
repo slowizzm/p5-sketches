@@ -1,83 +1,55 @@
-body {    
-  font-size: 12px;
-  background-color: hsl(249, 30%, 10%);
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  overflow-x: hidden;
+body {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	align-content: center;
 }
 
 canvas {
-  object-fit: cover;
-  width: 100vw !important;
-  height: 100vh !important;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -100;
-  margin: 0;
-  padding: 0;
+	display: block;
 }
 
-button, input {
-  color:  hsla(21, 9%, 92%,0.9);
-  font-family: 'Avenir', monospace;
-  font-size: 1em;
-  background-color: hsla(21, 9%, 92%,0.3);
-  border: none;
-  margin: 10px;
+#settings {
+	display: block;
+	position: absolute;
+	color: white;
+	background-color: rgb(50, 50, 50, 0.9);
+	border-radius: 10;
+	opacity: 0.5;
+	font-family: monospace;
+	top: 25vh;
+	padding: 10px;
+	transition: all .01s ease-in-out;
+
 }
 
+#settings:hover {
+	opacity: 1;
+	box-shadow: 1px 1px 3px 1px #00000033;
 
-p {
-  color: hsl(21, 9%, 92%);
-  font-family: 'Avenir', monospace;
-  font-size: 1em;
+	/* transform: scale(1.1); */
 }
 
-#menu {
-  width: 100vw;
-  height: 20vh;
+.btn-group button {
+	background-color: #1b1212;
+	/* Green background */
+	color: white;
+	/* White text */
+	padding: 10px 24px;
+	/* Some padding */
+	cursor: pointer;
+	/* Pointer/hand icon */
+	width: 100%;
+	display: block;
+	/* Make the buttons appear below each other */
 }
 
-#mouseArea {
-  position: fixed;
-  top: 0;
+.btn-group button:not(:last-child) {
+	border-bottom: none;
+	/* Prevent double borders */
 }
 
-#interface {
-  position: fixed;
-  transition: 1s ease all;
-  margin-bottom: 150px;
-  display: flex;
-  flex-flow: row wrap;
-}
-
-input[type=number]{
-  -moz-appearance: textfield;
-  appearance: textfield;
-  width: 5em;
-}
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  -moz-appearance: textfield;
-  appearance: textfield;
-}
-
-.slider {
-  padding:0;
-  margin:15px;
-  -webkit-appearance: none;
-  appearance: none;
-  
-  background: hsla(21, 9%, 92%,0.3);
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-
-.slider:hover {
-  opacity: 1;
+/* Add a background color on hover */
+.btn-group button:hover {
+	background-color: #464646;
 }

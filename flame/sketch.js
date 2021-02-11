@@ -1,11 +1,11 @@
-let flames = [],
-  flameCount = 200,
-  flamesFull = false,
+const flames = [],
+  flameCount = 200;
+
+let flamesFull = false,
   hueRange = 50,
   globalTick = 0,
-  rand = function(min, max) {
-    return Math.floor((Math.random() * (max - min + 1)) + min);
-  };
+  xoff = 0.0;
+
 
 function setup() {
   createCanvas(400, 400);
@@ -13,12 +13,14 @@ function setup() {
 }
 
 function draw() {
-  background(300, 30, 10, 1);
+  xoff += 0.08;
+  let n = noise(xoff) * width;
+  background(300 / n, 30, 10, 1);
 
   createFlames();
-  for (let f of flames) {
-    f.update();
-    f.render();
-  }
+
+  flames.forEach(flame => {
+    flame.render();
+  });
   globalTick++;
 }

@@ -1,28 +1,39 @@
-function setup() {
-  colorMode(HSB, 360, 100, 100, 1);
-  createCanvas(
-    window.innerWidth,
-    window.innerHeight);
-  cols = floor(width / 5);
-  rows = floor(height / 5);
-  
-  select('#menu').position(width*0.025,0);
+let scl, bgCol, shapeType, inverted;
 
-  sliders = selectAll('.slider');
-  hideInterface();
+function setup() {
+	let cvs = createCanvas(400, 400);
+	cvs.position(width * 0.5, 0);
 }
 
 function draw() {
-  background(33);
-}
+	let scaleSlider = select('#scl')
+	scl = scaleSlider.value()
 
-//reactive menu
-function showInterface() {
-  let i = select('#interface');
-  i.style('top', '0');
-}
+	let invertedValue = select('#inverted')
+	inverted = invertedValue.checked()
 
-function hideInterface() {
-  let i = select('#interface');
-  i.style('top', '-450px');
+	let backgroundColorPicker = select('#bgCol')
+	bgCol = backgroundColorPicker.value()
+
+	let pixelTypeValue = select('#shapeType')
+	shapeType = pixelTypeValue.value()
+
+
+	background(bgCol);
+
+	if (inverted) {
+		stroke(217);
+		noFill();
+	} else {
+		noStroke();
+		fill(217);
+	}
+
+	if (shapeType === 'circle') {
+		ellipse(width * 0.5, height * 0.5, scl);
+	} else if (shapeType === 'square') {
+		rectMode(CENTER);
+		rect(width * 0.5, height * 0.5, scl, scl);
+	}
+
 }

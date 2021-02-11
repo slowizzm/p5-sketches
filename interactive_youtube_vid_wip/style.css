@@ -1,0 +1,221 @@
+@import url("https://use.typekit.net/xtt3pjn.css");
+/* tony hawk faces are just placeholders for time being */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: poppins, sans-serif;
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+:root {
+  --col-main: #E8B740;
+  --col-sec: hsla(0,10%,5%,1);
+  --vid-w: 420px;
+  --vid-h: 260px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#signage {
+  position: relative;
+  width: 520px;
+  height: 750px;
+  top: 15px;
+  margin: 0 auto;
+  background: var(--col-main);
+  outline: thick solid var(--col-sec);
+  border: thick solid var(--col-sec);
+  border-width: 10px 5px;
+  z-index: 10;
+}
+
+.title {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4rem 0 2.5rem 0;
+/*   text-transform: uppercase; */
+  font-size: 2.7rem;
+  letter-spacing: 0.3rem;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ------------------------------------------------------ Transition */
+.pauseVid {
+  display: block;
+  position: absolute;
+  background-color: var(--col-sec);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 250ms linear;
+  color: #f8f8ff ;
+  text-align: center;
+}
+
+.pauseVid h1 {
+  margin: 25% auto;
+  line-height: 50px;
+  vertical-align: middle;
+  font-size: 1.7rem;
+}
+
+/* ------------------------------------------------------ VIDEO CONTAINER */
+
+.glass {
+  position: relative;
+  width: calc(var(--vid-w) - 10px);
+  height: 250px;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .1);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, .1);
+  top: 5px;
+  left: 5px;
+
+  backdrop-filter: blur(0.25px);
+}
+
+
+
+.video-container {
+  display: none;
+  position: relative;
+  width: var(--vid-w);
+  height: var(--vid-h);
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.video-container .player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.border {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 5px solid var(--col-sec);
+  border-radius: 10px;
+}
+
+.video-container .player {
+  pointer-events: none;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 120px);
+}
+
+.video-foreground {
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------ Button Images */
+
+.img-container {
+  display: none;
+  justify-content: center;
+  padding-top: 4rem;
+}
+
+.img-container img {
+  width: 6%;
+  height: 6%;
+  margin: 0 47px;
+  position: relative;
+}
+
+/* ------------------------------------------------------ Buttons */
+
+.btns {
+  display: none;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.btns span {
+  width: 34px;
+  height: 25px;
+  margin: 0 45px;
+  border-radius: 10%;
+  cursor: pointer;
+  position: relative;
+}
+
+
+.btns .active:after {
+  content: "";
+  width: 50px;
+  height: 42px;
+  background: var(--col-sec);
+  position: absolute;
+  border-radius: 25%;
+  box-sizing: border-box;
+  border: 3px solid var(--col-main);
+  left: -8px;
+  top: -9px;
+  z-index: 2;
+}
+
+#btn-init {
+  background: var(--col-main);
+}
+
+.btn {
+  background: var(--col-main);
+}
+
+.btn:after {
+  content: "";
+  width: 50px;
+  height: 42px;
+  background: var(--col-sec);
+  position: absolute;
+  border-radius: 10%;
+  box-sizing: border-box;
+  left: -8px;
+  top: -9px;
+  z-index: -1;
+}
+
+/* ------------------------------------------------------ Sub Text */
+
+.sub-txt {
+  display: none;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 5rem 0 3rem 0;
+  font-size: 2.75rem;
+  letter-spacing: 0.3rem;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ------------------------------------------------------ Footer Image */
+
+.img-footer {
+  display: none;
+  position: absolute;
+  width: 10%;
+  height: auto;
+  margin: 0 45%;
+  opacity: 0.75;
+  filter: alpha(opacity=50);
+}

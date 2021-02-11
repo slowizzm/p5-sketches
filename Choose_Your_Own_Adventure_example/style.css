@@ -1,0 +1,115 @@
+@import url("https://use.typekit.net/xtt3pjn.css");
+
+/* css variables */
+:root {
+  --main-col: #fff;
+  --main-bg-col: rgb(204, 204, 204);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
+
+canvas {
+  display: none;
+}
+
+html {
+  background: var(--main-bg-col);
+  /* background: linear-gradient(170deg, rgba(204,204,204,1) 0%, rgba(0,0,0,1) 100%) bottom no-repeat; */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.title {
+  justify-content: center;
+  font-size: 4rem;
+  font-weight: regular;
+  font-family: Poppins-Regular, Poppins;
+  letter-spacing: 0.23rem;
+  text-decoration: none;
+  color: var(--main-col);
+}
+
+.gif-container {
+  filter: drop-shadow(0px 0px 13px rgba(33, 33, 33, 1));
+}
+
+.gifs {
+   z-index: 1;
+  clip-path: inset(0 0 50px 0);
+}
+
+.theEnd {
+  display: none;
+  position: relative;
+  top: -23rem;
+  left: -15rem;
+  font-family: Poppins-Regular, Poppins;
+  color: var(--main-col);
+  font-size: 2.15rem;
+  z-index: 999;
+}
+
+.storyText {
+  color: #333;
+  margin: -1rem 0 1.5rem 0;
+  font-size: 1.7rem;
+  font-family: Poppins-Regular, Poppins;
+  font-weight: 400;
+  color: var(--main-col);
+}
+
+.input-group {
+  top: 10rem;
+  margin: 1rem 0 0 0;
+}
+
+.btn {
+  font-size: 1.6rem;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 3px;
+  background: rgba(33, 33, 33, 0.8);
+  width: 18rem;
+  height: 3rem;
+  color: #f2f2f2f2;
+  outline: none;
+  font-size: 1.2rem;
+  line-height: 3.5rem;
+  font-weight: regular;
+  font-family: Poppins-Regular, Poppins;
+  letter-spacing: 0.23rem;
+  text-decoration: none;
+  box-shadow: 0px 2px 3px rgba(13, 13, 13, 0.45);
+}
+
+.btn:hover {
+  background: rgba(33, 33, 33, 0.9);
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: translateY(1px);
+  filter: saturate(150%);
+  background: rgba(33, 33, 33, 1);
+  box-shadow: 0px 1px rgba(13, 13, 13, 0.25);
+}
+
+#btn-a {
+  padding: 0 5px 0 5px;
+  margin-right: 20px;
+}
+
+#btn-b {
+  padding: 0 5px 0 5px;
+  margin-left: 20px;
+}

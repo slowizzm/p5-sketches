@@ -1,0 +1,15 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+canvas {
+  display: block;
+}
+
+.btn-elt {
+ position: relative;
+  margin: auto;
+  left: 150px;
+  top: -30px;
+}

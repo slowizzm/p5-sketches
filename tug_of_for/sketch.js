@@ -1,61 +1,52 @@
-let izzms = [],
-	NUM_IZZMS = 3;
+let colorUnits = [],
+  NUM_IZZMS = 3;
 
 function setup() {
-	createCanvas(400, 400);
+  createCanvas(400, 400);
+  stroke(13, 17, 21);
 
-	for (let i = 0; i < NUM_IZZMS; i++) {
-		let izz = new Izzm((i + 1) * 33, height * 0.2, 33, random(100, 255), random(100, 255), random(200, 255));
-		izzms.push(izz);
-	}
+  for (let i = 0; i < NUM_IZZMS; i++) {
+    colorUnits[i] = new ColorUnit({
+        x: (i + 1) * 33,
+        y: height * 0.2
+      },
+      33, {
+        x: random(100, 255),
+        y: random(100, 255),
+        z: random(200, 255)
+      });
+  }
 }
 
 function draw() {
-	background(220);
-	translate(width*0.3,0);
-	for (let i = 0; i < izzms.length; i++) {
-		izzms[i].run();
-	}
+  background('#fffafa');
+  translate(width * 0.3, 0);
 
-	for (let izzm of izzms) {
-		push();
-		translate(0, 100);
-		izzm.run();
-		pop();
-	}
+  drawForLoop();
+  drawForOfLoop();
+  drawForEachLoop();
+}
 
-	izzms.forEach(izzm => {
-		push();
-		translate(0, 200);
-			izzm.run();
-		pop();
-		})
-	}
+const drawForLoop = _ => {
+  for (let i = 0; i < colorUnits.length; i++) {
+    colorUnits[i].display();
+  }
+};
 
-	class Izzm {
-		constructor(_x, _y, _s, _r, _g, _b) {
-			this.pos = createVector(_x, _y);
-			this.vel = createVector();
-			this.acc = createVector();
+const drawForOfLoop = _ => {
+  for (let colorUnit of colorUnits) {
+    push();
+    translate(0, 100);
+    colorUnit.display();
+    pop();
+  }
+};
 
-			this.s = _s;
-			this.c = color(_r, _g, _b);
-		}
-
-		update() {
-			this.vel.add(this.acc);
-			this.pos.add(this.vel);
-		}
-
-		display() {
-			push();
-			fill(this.c);
-			rect(this.pos.x, this.pos.y, this.s, this.s);
-			pop();
-		}
-
-		run() {
-			this.update();
-			this.display();
-		}
-	}
+const drawForEachLoop = _ => {
+  colorUnits.forEach(colorUnit => {
+    push();
+    translate(0, 200);
+    colorUnit.display();
+    pop();
+  });
+};

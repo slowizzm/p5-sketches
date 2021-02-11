@@ -1,26 +1,25 @@
 class Fish {
-	constructor(x, y, varience) {
-		this.varience = varience;
+	constructor(x, y, v) {
+		this.varience = v;
 		this.pos = createVector(x, y);
-		this.vel = createVector(0, 0);
-		this.acc = createVector(0, 0);
+		this.vel = createVector();
+		this.acc = createVector();
 		this.h = 40 * this.varience;
 		this.w = 16 * this.varience;
 		this.xoff = 0;
-		this.maxspeed = 0.5 / varience;
+		this.maxspeed = 0.5 / this.varience;
 		this.dis = 0;
 	}
 
 	update(x, y) {
 		let mouse = createVector(mouseX, mouseY);
-		let dir = createVector(0, 0);
+		let dir = createVector();
 		this.dis = dist(this.pos.x, this.pos.y, mouseX, mouseY);
 		if (this.dis < 130) {
 			dir = p5.Vector.sub(this.pos, mouse);
 		} else {
 			dir = createVector(x, y);
 		}
-		//dir = createVector(x, y);
 		this.acc = dir;
 		this.pos.add(this.vel);
 		this.vel.add(this.acc);
@@ -29,8 +28,8 @@ class Fish {
 	}
 
 	tail() {
-		noStroke();
 		push();
+		noStroke();
 		angleMode(DEGREES);
 		translate(this.pos.x, this.pos.y);
 		rotate(this.vel.heading() + 90);

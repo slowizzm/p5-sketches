@@ -1,37 +1,35 @@
-let img;
-let imgX = 100;
-let imgY = 60;
+let img,
+  imgPos = {};
+
+function preload() {
+  img = loadImage('images/stlCards.png');
+}
 
 function setup() {
-  createCanvas(window.innerWidth, window.innerHeight);
+  createCanvas(800, 400);
 
-  colorMode(HSL, 360, 100, 100, 1);
+  colorMode(HSL, 360, 1, 1, 1);
+  img.resize(img.width * 0.5, img.height * 0.5);
+  imgPos.x = width * 0.5 - (img.width * 0.5);
+  imgPos.y = height * 0.5 - (img.height * 0.5);
 
-  img = loadImage("images/stlCards.png");
 }
 
 function draw() {
-  if (checkTransparency() && rollover()) {
-    background(0, 100, 60, 1);
+  if (checkTransparency() && hover()) {
+    background(0, 0.9, 0.6, 1);
   } else {
-    background(0, 70, 80, 1);
+    background(0, 0.7, 0.8, 1);
   }
 
-  image(img, imgX, imgY);
+  image(img, imgPos.x, imgPos.y);
 }
 
-/*
-Check the alpha of the image pixel the mouse is currently over
- */
-
-function checkTransparency() {
-  return (img.get(mouseX - imgX, mouseY - imgY)[3] > 0);
+//Check the alpha of the image pixel the mouse is currently over
+const checkTransparency = _ => {
+  return (img.get(mouseX - imgPos.x, mouseY - imgPos.y)[3] > 0);
 }
 
-function rollover() {
-  return (mouseX > imgX && mouseX < imgX + img.width && mouseY > imgY && mouseY < imgY + img.height);
-}
-
-function windowResized() {
-  resizeCanvas(window.innerWidth, window.innerHeight);
+const hover = _ => {
+  return (mouseX > imgPos.x && mouseX < imgPos.x + img.width && mouseY > imgPos.y && mouseY < imgPos.y + img.height);
 }

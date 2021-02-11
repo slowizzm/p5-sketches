@@ -1,0 +1,36 @@
+<!DOCTYPE html><html><head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <div class="scene-container">
+
+    <h1 class="title">Nick Cage Meme Adventure</h1>
+
+    <div class="gif-container">
+      <img src="#" alt="browser does not support gif" class="gifs" display="none">
+<iframe class="cage-face" src="https://editor.p5js.org/slow_izzm/embed/dWxAhazI-" width="480" height="300" frameborder="0"></iframe>
+    </div>
+    <div class="textSection">
+      <p class="storyText">Every good story begins with a snake.</p>
+    </div>
+
+    <div class="input-group">
+      <input id="start" type="button" class="start" onclick="startStory()" value="Begin your adventure">
+      <input id="btn-a" type="button" class="btn" onclick="btnClick('choice-a')" value="" style="display:none">
+
+      <input id="btn-b" type="button" class="btn" onclick="btnClick('choice-b')" value="" style="display:none">
+    </div>
+    
+    <input class="input-txt" type="text" placeholder="Well, does it?" name="txt-input">
+    <p class="theEnd"> The End </p>
+  </div>
+
+
+  <script src="js/variables.js"></script>
+  <script src="js/functions.js"></script>
+  <script src="js/main.js"></script>
+
+
+</body></html>

@@ -9,7 +9,6 @@ function setup() {
 
 	pixelDensity(1);
 }
-let x = 0;
 
 function draw() {
 

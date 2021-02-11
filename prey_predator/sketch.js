@@ -1,3 +1,5 @@
+"use strict"
+
 let predator;
 let prey = [];
 let behaviorSelect;

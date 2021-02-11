@@ -1,30 +1,27 @@
-let delay = 3000; // 1000 = 1 sec
-let currentClickTime = 0;
-let showObj = 0;
+const timer = {
+  delay: 3000,
+  start: null,
+  stop: null
+};
 
 function setup() {
-	createCanvas(400, 400);
+  createCanvas(400, 400);
+  textFont('Avenir');
+  textAlign(CENTER, CENTER);
+  textSize(42);
+  fill(220);
 }
 
 function draw() {
-	background(51);
-	showHide();
+  background(51);
+  (runTimer()) ? ellipse(200, 200, 100, 100): text('click here', width * 0.5, height * 0.5);
 }
 
 function mousePressed() {
-	currentCickTime = int(millis());
-	showObj = currentCickTime + delay;
-	//console.log(currentCickTime);
+  timer.start = int(millis());
+  timer.stop = timer.start + timer.delay;
 }
 
-function showHide() {
-	fill(217);
-	if (showObj > millis()) {
-		ellipse(200, 200, 100, 100);
-	} else {
-	textFont('Avenir');
-	textAlign(CENTER,CENTER);
-	textSize(42);
-	text('click canvas', width >> 1, height>>1);
-	}
+function runTimer() {
+  return timer.stop > int(millis());
 }

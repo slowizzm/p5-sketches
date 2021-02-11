@@ -1,13 +1,13 @@
 class Izzm {
-	constructor(_x, _y, _sx, _sy, _len, _s) {
-		this.pos = createVector(_x, _y);
-		this.vel = createVector(noise(_sx), noise(_sy));
+	constructor(x, y, sx, sy, len, s) {
+		this.pos = createVector(x, y);
+		this.vel = createVector(noise(sx), noise(sy));
 		this.acc = createVector(random(-1, 1), random(-1, 1));
 
 		this.history = [];
 		this.col = random(360);
-		this.tailLength = _len;
-		this.size = _s;
+		this.tailLength = len;
+		this.size = s;
 	}
 
 	update() {

@@ -1,0 +1,48 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: none;
+}
+
+
+.cls-1 {
+  fill: url(#linear-gradient);
+}
+
+.cls-2 {
+  fill: url(#linear-gradient-2);
+}
+
+.cls-3 {
+  fill: url(#linear-gradient-3);
+}
+
+.cls-4 {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2px;
+}
+
+.cls-5 {
+  fill: #4f345a;
+}
+
+.cls-6 {
+  fill: #5d4e6d;
+}
+
+.cls-7 {
+  fill: #8fa998;
+}
+
+.cls-8 {
+  fill: #9cbfa7;
+}
+
+.cls-9 {
+  fill: #c9f299;
+}

@@ -1,10 +1,10 @@
 class Predator {
 	constructor() {
-		this.pos = createVector(random(0, width), random(0, height));
+		this.pos = createVector(random(width), random(height));
 	}
 
-	move(_x, _y) {
-		this.pos.set(_x, _y);
+	move(x, y) {
+		this.pos.set(x, y);
 	}
 
 	display() {

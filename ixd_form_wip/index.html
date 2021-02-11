@@ -1,0 +1,65 @@
+<!DOCTYPE html><html><head>
+  <script src="p5.js"></script>
+  <script src="p5.dom.min.js"></script>
+  <script src="p5.sound.min.js"></script>
+  <script src="jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1125 2436">
+      <defs>
+        <lineargradient id="grad-bg" x1="413.73" y1="461.41" x2="657.13" y2="121.71" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#ffc700"></stop>
+          <stop offset="0.07" stop-color="#fcbd0a"></stop>
+          <stop offset="0.22" stop-color="#f9b215"></stop>
+          <stop offset="0.43" stop-color="#f7ab1c"></stop>
+          <stop offset="1" stop-color="#f6a91e"></stop>
+        </lineargradient>
+
+        <lineargradient id="grad-bg-in" x1="305.02" y1="1093.64" x2="726.41" y2="505.52" xlink:href="#grad-bg"></lineargradient>
+        <lineargradient id="grad-bg-out" x1="49.55" y1="817.19" x2="1774.52" y2="656.51" xlink:href="#grad-bg"></lineargradient>
+      </defs>
+      <title>ui_designs</title>
+      <g id="bg-group">
+        <path id="bg-in" class="bg-in" d="M1125,1468.56V0H0V1469a1191,1191,0,0,0,1125-.47Z"></path>
+        <path id="bg-out" class="bg-out" d="M1125,1444.8V0H0V1444.8a1191,1191,0,0,0,1125,0Z"></path>
+      </g>
+
+      <g id="logo">
+        <path id="logo-0" class="logo-0" d="M512.81,386.49c6.85-1.61,13.22-3.2,19.65-4.52a4.39,4.39,0,0,1,3.31,1.37q16.5,17.39,32.79,35a4.7,4.7,0,0,1,1.13,3.74c-1.68,6.22-3.67,12.36-5.7,19Zm13.42-36c5.11,5.45,9.54,10.34,14.21,15a5.1,5.1,0,0,0,4.06,1.13q22.57-5.08,45.07-10.57a5.1,5.1,0,0,0,3.12-2.82c2.11-6.24,3.91-12.58,6.06-19.72Zm76.07,13a5.14,5.14,0,0,0-3,2.94c-4.6,14.74-9.05,29.53-13.47,44.33-.29,1-.45,2.6.11,3.22,4.69,5.26,9.57,10.35,14.87,16,7.29-24.1,14.35-47.42,21.56-71.28C615.12,360.36,608.67,361.76,602.3,363.46Zm11.9-33.59c-.71.17-1.79.51-2,1-2,6.15-3.81,12.35-5.85,19.09,6.66-1.54,12.43-2.82,18.17-4.25a3.46,3.46,0,0,0,2.19-1.75c1.9-5.84,3.62-11.74,5.62-18.36C625.72,327.16,620,328.49,614.2,329.87ZM501.66,375a3.14,3.14,0,0,0,2.32,1c6.6-1.42,13.17-3,20.58-4.75-3.47-3.69-6.28-6.77-9.21-9.73a3.14,3.14,0,0,0-2.41-.81c-6.51,1.42-13,3-20.31,4.69C496.05,369.1,498.8,372.11,501.66,375Z"></path>
+        <path id="logo-1" class="logo-1" d="M574.05,449.74a3.18,3.18,0,0,0,.18,2.54c2.89,3.3,5.95,6.45,9.48,10.22,2.19-7.22,4.15-13.58,6-20a2.66,2.66,0,0,0-.45-2.14c-2.87-3.2-5.84-6.31-9.37-10.06C577.74,437.43,575.84,443.57,574.05,449.74Z"></path>
+      </g>
+
+    </svg>
+    <p class="txt-title"> IZZMO</p>
+    <p id="txt-info" class="txt-info"> App design for the design<br> app. Design your app<br> designs app today.</p>
+    <p class="txt-sub"> Get your free account</p>
+    <p class="txt-signin"> Sign In</p>
+
+    <form name="login">
+      <div>
+        <input id="input-box-userid" class="input-box-userid" type="text" placeholder="Username" name="userid"><br>
+        <input class="input-box-pswrd" type="text" placeholder="Password" name="pswrd"><br>
+      </div>
+    </form>
+
+    <input id="btn" type="button" class="btn default dropShadow" onclick="getStarted()" value="Get Started">
+
+  </div>
+
+
+
+
+
+
+
+
+  <script src="sketch.js"></script>
+
+
+</body></html>

@@ -6,6 +6,7 @@ class Points {
     this.offset = createVector();
     this.isDraggable = false;
     this.isRollOver = false;
+    // this.showCoords = true;
   }
 
   rollOver() {
@@ -39,14 +40,16 @@ class Points {
   }
 
   coords() {
-    push();
-    textAlign(CENTER, CENTER);
-    textFont('AVENIR');
-    textSize(13);
-    noStroke();
-    fill(217);
-    text(int(this.pos.x) + ',' + int(this.pos.y), this.pos.x, this.pos.y - 33);
-    pop();
+    if (canShowCoords) {
+      push();
+      textAlign(CENTER, CENTER);
+      textFont('AVENIR');
+      textSize(13);
+      noStroke();
+      fill(217);
+      text(int(this.pos.x) + ',' + int(this.pos.y), this.pos.x, this.pos.y - 33);
+      pop();
+    }
 
     return this;
   }

@@ -1,6 +1,6 @@
 class Light {
 	constructor() {
-		this.pos = createVector(random(0, width), random(0, height));
+		this.pos = createVector(random(width), random(height));
 	}
 
 	move(x, y) {

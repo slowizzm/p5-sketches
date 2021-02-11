@@ -1,18 +1,25 @@
 class Grid {
-  constructor(_x, _y) {
-    this.cell = createVector(_x, _y);
-    this.pos = createVector();
-    this.spacing = 13;
-    this.offset = createVector(20, 50);
+  constructor(cell) {
+    this.cell = {
+      x: cell.x,
+      y: cell.y
+    };
+    this.pos = {};
+    this.spacing = 50;
+    this.offset = {
+      x: 2,
+      y: 20
+    };
   }
 
   createGrid() {
     if (this.cell.y % 2 === 0) {
-      this.pos.x = this.cell.x * this.spacing * 2 + this.offset.x;
+      this.pos.x = this.cell.x * this.spacing * this.offset.x;
     } else {
-      this.pos.x = this.cell.x * this.spacing * 2 + this.spacing + this.offset.x;
+      this.pos.x = this.cell.x * this.spacing * this.offset.x + this.spacing;
     }
-    this.pos.y = this.cell.y * this.spacing * 1.7 + this.offset.y;
+
+    this.pos.y = this.cell.y * this.spacing + this.offset.y;
 
     return this;
   }
@@ -20,12 +27,7 @@ class Grid {
   display() {
     stroke(255, 255, 255, 50)
     fill(2173);
-    push();
-    translate(this.pos.x, this.pos.y);
-    rotate(radians(30));
-    rectMode(CENTER);
-    rect(0, 0, 3, 3);
-    pop();
+    ellipse(this.pos.x, this.pos.y, 10);
 
     return this;
   }

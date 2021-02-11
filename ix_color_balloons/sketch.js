@@ -1,26 +1,25 @@
-let cols = ['rgba(208,196,170,.3)',
-  'rgba(143,211,194,.3)',
-  'rgba(238,200,97,.3)',
-  'rgba(239,167,89,.3)',
-  'rgba(228,147,137,.3)'
-];
+const cols = ['rgba(208,196,170,0.3)',
+    'rgba(143,211,194,0.3)',
+    'rgba(238,200,97,0.3)',
+    'rgba(239,167,89,0.3)',
+    'rgba(228,147,137,0.3)'
+  ],
+  ltrs = ['C',
+    'O',
+    'L',
+    'O',
+    'R'
+  ],
+  balloons = [];
 
-let ltrs = ['C',
-  'O',
-  'L',
-  'O',
-  'R'
-];
-let balloons = [];
-let c = 0;
+let colIdx = 0;
 
 function setup() {
   createCanvas(375, 667);
   noStroke();
   for (let i = 1; i < 6; i++) {
-
-    balloons.push(new Balloon(i * 60, height * 0.4, 77, cols[c], ltrs[c]));
-    c++
+    balloons.push(new Balloon(i * 60, height * 0.4, 77, cols[colIdx], ltrs[colIdx]));
+    colIdx++;
   }
 }
 
@@ -35,47 +34,36 @@ function draw() {
 
   balloons.forEach((balloon, index) => {
     let startPos = createVector(balloon.pos.x, height * 0.4);
-
-    if (!balloon.isDraggable) {
-      balloon.render(1, startPos);
-    } else {
-      balloon.update(0);
-    }
+    (!balloon.isDraggable) ? balloon.render(1, startPos): balloon.update(0);
     balloon.display();
   });
 }
 
 function mousePressed() {
-  let distance = [];
-  for (i = 0; i < balloons.length; i++) {
-    let d = [dist(mouseX, mouseY, balloons[i].pos.x, balloons[i].pos.y)];
-    distance.push(d);
-    if (distance[i] < balloons[i].size / 3) {
-      balloons[i].isDraggable = true;
-      //console.log(i);
-    }
-  }
+  balloons.forEach((balloon, index) => {
+    let d = dist(mouseX, mouseY, balloon.pos.x, balloon.pos.y);
+    if (d < balloon.size / 2.25) balloon.isDraggable = true;
+  });
 }
 
 //touchEnded on mobile
 function mouseReleased() {
-  for (i = 0; i < balloons.length; i++) {
-    balloons[i].isDraggable = false;
-    //console.log(i+ " " + "released");
-  }
+  balloons.forEach(balloon => {
+    balloon.isDraggable = false;
+  });
 }
 
 //touchMoved on mobile
 function mouseDragged() {
-  let distance = [];
-  for (i = 0; i < balloons.length; i++) {
-    let d = [dist(mouseX, mouseY, balloons[i].pos.x, balloons[i].pos.y)];
-    distance.push(d);
-    if (balloons[i].isDraggable === true) {
-      //console.log(i+" "+"drag");
-      //balloon[i].pos.x = mouseX;
-      balloons[i].pos.y = mouseY;
-      //console.log(i);
+  balloons.forEach(balloon => {
+    if (balloon.isDraggable) {
+      if (balloon.checkIfBalloonReachedBottom()) {
+        balloon.pos.y = height;
+      } else if (balloon.checkIfBalloonReachedTop()) {
+        balloon.pos.y = 0;
+      } else {
+        balloon.pos.y = mouseY;
+      }
     }
-  }
+  });
 }

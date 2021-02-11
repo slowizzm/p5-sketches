@@ -1,21 +1,25 @@
-let cols = 33,
-	rows = 133;
-let grid = [];
+const grid = [];
+
+let cols,
+  rows;
 
 function setup() {
-	createCanvas(windowWidth * 0.95, windowHeight * 0.95);
+  createCanvas(800, 800);
+  background(51);
 
-	for (let x = 0; x < rows; x++) {
-		for (let y = 0; y < cols; y++) {
-			grid.push(new Grid(x, y));
-		}
-	}
-}
+  cols = width / 5;
+  rows = height / 20;
 
-function draw() {
-	background(51);
+  for (let col = 0; col < cols; col++) {
+    for (let row = 0; row < rows; row++) {
+      grid.push(new Grid({
+        x: col,
+        y: row
+      }));
+    }
+  }
 
-	for (let i = 0; i < grid.length; i++) {
-		grid[i].drawGrid();
-	}
+  for (let i = 0; i < grid.length; i++) {
+    grid[i].drawGrid();
+  }
 }

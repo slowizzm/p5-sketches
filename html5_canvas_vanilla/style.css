@@ -1,0 +1,49 @@
+@import url("https://use.typekit.net/xtt3pjn.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: poppins, sans-serif;
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layer1 {
+  position: absolute;
+  background-image: linear-gradient(#1dd2ac 0%, #2e069e 100%);
+}
+
+.layer2 {
+  position: absolute;
+  background-image: transparent;
+  z-index: 3;
+}
+
+.layer2:hover {
+  cursor: none;
+}
+
+.title {
+  position: absolute;
+  color: #eeee;
+  font-size: 13rem;
+  text-align: center;
+  top: 35rem;
+  text-shadow: 3px 3px #3331;
+  background: -webkit-linear-gradient(#eeef, #ff93aa66);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

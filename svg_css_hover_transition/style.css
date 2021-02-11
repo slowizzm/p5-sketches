@@ -1,0 +1,47 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#small {
+  transform: translate3d(10px, 10px, 0px);
+  fill: rgb(255, 255, 255, 0.3);
+  transition: 350ms transform ease-out, 250ms fill ease-out, fill 1000ms;
+}
+
+
+#logo {
+  fill: rgb(0, 0, 0, 0.5);
+  stroke: none;
+  transform: rotate(0deg);
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  margin-top: 50px;
+  margin-left: -50px;
+  width: 30vw;
+  height: 30vh;
+  transform-origin: center;
+  transition: 750ms 250ms transform ease-out;
+}
+
+#big {
+  fill: rgba(33, 33, 33, 0.9);
+  transition: fill 1000ms;
+}
+
+#logo:hover {
+  transform: rotate(180deg);
+  transform-origin: center;
+}
+
+#logo:hover #big {
+  fill: rgba(255, 255, 255, 0.5);
+}
+
+#logo:hover #small {
+  fill: rgba(33,33,33,0.9);
+  transform: translate3d(0px, 0px, 0px);
+  transform-origin: center;
+}

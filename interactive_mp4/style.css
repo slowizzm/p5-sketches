@@ -1,0 +1,26 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 300px;
+  width: 150px;
+  z-index: -600;
+}
+
+.title, .info {
+  position: absolute;
+  color: #fff;
+  padding: 0 10px 0 10px;
+  background: #333
+}
+
+.info {
+  top: 50px;
+  font-weight: bold;
+}

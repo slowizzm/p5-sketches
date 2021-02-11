@@ -1,0 +1,67 @@
+/*  hoodie is not my design - comes from a student for who this example was made for  */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background-color: #333333;
+}
+
+canvas {
+  display: none;
+}
+
+.container {
+  position: relative;
+  padding: 2rem;
+}
+
+#hoodie {
+  position: relative;
+  width: 200px;
+  height: auto;
+}
+
+#hoodie-black-posi {
+  transform: scale(.5)
+}
+
+.popout,
+p {
+  transform-origin: center;
+  transition: transform .2s ease-in-out;
+}
+
+.popout:hover {
+  transform: scale(1.1);
+}
+
+p {
+  display: block;
+  padding: 20px;
+  width: 150px;
+  color: #fff;
+  text-align: center;
+}
+
+p::before {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 3px;
+}
+
+p::after {
+  content: '';
+  width: 100%;
+  height: 3px;
+  display: block;
+}
+
+.popout:hover+p:before,
+.popout:hover+p:after {
+  background: #F00;
+}

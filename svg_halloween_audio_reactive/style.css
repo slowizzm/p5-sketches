@@ -1,0 +1,101 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: hsla(260,10%,10%,.95);
+}
+
+canvas {
+  display: block;
+}
+
+#scraper-scene {
+/*   -webkit-animation: fadeIn 1s;
+  animation: fadeIn 11s; */
+  display: none;
+}
+
+#sky-high {
+  fill: hsla(30, 40%, 10%, 1);
+  opacity: 0.15;
+}
+
+#sky-low {
+  fill: hsla(230, 90%, 10%, 1);
+  opacity: 0.1;
+}
+
+#moon {
+  fill: hsla(230, 100%, 100%, 1);
+  opacity: 0.4;
+}
+
+#witch {
+  fill: hsla(130, 60%, 10%, 1);
+  opacity: 0.35;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+#lamp {
+  display: none;
+}
+
+#top {
+  fill: #363636;
+}
+
+#glow_1,
+#glow_2,
+#glow_0,
+#bulb {
+  fill: #f0f0f0;
+}
+
+#glow_1 {
+  opacity: 0.1;
+}
+
+#glow_2 {
+  opacity: 0.05;
+}
+
+#glow_0 {
+  opacity: 0.2;
+}
+
+#glass {
+  fill: #e5e5e5;
+}
+
+#bottom {
+  fill: #4e4e4e;
+}
+
+#frame {
+  fill: none;
+  stroke: #000;
+  stroke-miterlimit: 10;
+}

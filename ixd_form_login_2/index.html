@@ -1,0 +1,61 @@
+<!DOCTYPE html><html><head>
+  <script src="p5.js"></script>
+  <script src="p5.dom.min.js"></script>
+  <script src="p5.sound.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <svg id="login" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1130 2436">
+      <defs>
+        <lineargradient id="linear-gradient" x1="0.5" y1="2036" x2="1124.5" y2="2036" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#fb7ca7"></stop>
+          <stop offset="1" stop-color="#f9439a"></stop>
+        </lineargradient>
+        <lineargradient id="linear-gradient-2" x1="1" y1="2112" x2="1125" y2="2112" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#fb74a4"></stop>
+          <stop offset="1" stop-color="#f93f92"></stop>
+        </lineargradient>
+        <lineargradient id="linear-gradient-3" y1="427.5" x2="1125" y2="427.5" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#ff7879"></stop>
+          <stop offset="1" stop-color="#ffc699"></stop>
+        </lineargradient>
+        <lineargradient id="linear-gradient-4" y1="414" x2="1125" y2="414" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#ff5f61"></stop>
+          <stop offset="1" stop-color="#ffac63"></stop>
+        </lineargradient>
+      </defs>
+      <title>login_0</title>
+      <rect id="bg" class="bg" x="5" width="1125" height="2436"></rect>
+      <path id="bottom-highlight" class="bottom-highlight" d="M.5,2382.5s222.72,59.31,600-280c159-143,351-420,524-466v799H.5Z" transform="translate(0)"></path>
+      <path id="bottom-main" class="bottom-main" d="M1,2401.44s222.72,56.94,600-268.8c159-137.28,351-300.48,524-344.64v648H1Z" transform="translate(0)"></path>
+
+      <g id="arrow">
+        <line id="arrow-main" class="arrow" x1="520.5" y1="1626" x2="603.5" y2="1626"></line>
+        <line id="arrow-btm" class="arrow" x1="572.5" y1="1657" x2="604.5" y2="1625"></line>
+        <line id="arrow-top" class="arrow" x1="572.5" y1="1593" x2="604.5" y2="1625"></line>
+      </g>
+      <path id="top-highlight" class="top-highlight" d="M0,855s77-41,162-113c77.81-65.91,150.19-139,223.79-209.45q73.13-70,145.93-140.41c51-49.25,100.13-100.77,153-147.91,46.14-41.12,98.45-74.44,152.74-104,60-32.74,124.59-61.13,192.38-72.78,31.34-5.38,63.69-7,95.13-1.41V0H0Z" transform="translate(0)"></path>
+      <path id="top-main" class="top-main" d="M0,0V828s77-41,162-113c77.81-65.91,150.19-139,223.79-209.45q73.13-70,145.93-140.41c51-49.25,100.13-100.77,153-147.91,46.14-41.12,98.45-74.44,152.74-104,60-32.74,124.59-61.13,192.38-72.78,31.34-5.38,63.69-7,95.13-1.41V0Z" transform="translate(0)"></path>
+      <path id="top-left-circ" class="top-left-circ" d="M0,0V510.93C183.87,406.41,314.62,219.27,341.76,0Z" transform="translate(0)"></path>
+    </svg>
+
+    <form name="login" class="login">
+      <div>
+        <input class="input-box-userid" type="text" placeholder="Login" name="userid"><br>
+        <input class="input-box-pswrd" type="text" placeholder="••••••• " name="pswrd"><br>
+        <input type="button" class="btn default dropShadow" onclick="checkUserInfo(this.form)" value="">
+      </div>
+    </form>
+  </div>
+
+
+
+  <script src="sketch.js"></script>
+
+
+</body></html>

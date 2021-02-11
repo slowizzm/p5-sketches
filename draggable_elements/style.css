@@ -1,0 +1,42 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: none;
+}
+
+body {
+  background: rgba(16, 31, 35, 1);
+}
+
+[draggable] {
+  cursor: grab;
+  cursor: -moz-grab;
+}
+
+[draggable=true] {
+  -khtml-user-drag: element;
+}
+
+.drop-area {
+  background: #ccc3;
+  position: absolute;
+  width: 400px;
+  height: 400px;
+}
+
+.draggable {
+  background-image: url('https://source.unsplash.com/random/150x150');
+  border-radius: 50%;
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  z-index: 1;
+}
+
+.dragging {
+  border: solid 5px #ccc;
+}

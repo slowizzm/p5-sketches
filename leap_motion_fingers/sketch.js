@@ -1,8 +1,9 @@
+let brush = [];
+
 let controller = new Leap.Controller({
 	enableGestures: false
 });
 controller.connect();
-let brush = [];
 
 
 function setup() {
@@ -13,8 +14,6 @@ function draw() {
 	fill(0, 30);
 	rect(0, 0, width, height);
 	paint();
-
-	//console.log(frame.fingers);
 }
 
 function paint() {
@@ -22,13 +21,13 @@ function paint() {
 	r = random(255);
 	g = random(255);
 	b = random(255);
-	frame.fingers.forEach(function(finger) {
+	frame.fingers.forEach(finger => {
 		x = finger.dipPosition[0] + width / 2;
 		y = height - finger.dipPosition[1];
 		brush.push(new Brush(x, y, color(r, g, b), random(15)));
 	});
 
-	frame.fingers.forEach(function(finger) {
+	frame.fingers.forEach(finger => {
 		for (let i = 0; i < brush.length; i++) {
 			brush[i].render(createVector(finger.dipPosition[0] + width / 2, height - finger.dipPosition[1]));
 		}
@@ -36,14 +35,14 @@ function paint() {
 }
 
 class Brush {
-	constructor(_x, _y, _col, _size) {
+	constructor(x, y, col, size) {
 		this.pos = createVector();
-		this.col = _col;
-		this.size = _size;
+		this.col = col;
+		this.size = size;
 	}
 
-	display(_pos) {
-		this.pos.set(_pos.x, _pos.y);
+	display(pos) {
+		this.pos.set(pos.x, pos.y);
 		noStroke();
 		fill(this.col);
 		ellipse(this.pos.x, this.pos.y, this.size, this.size);
@@ -51,7 +50,7 @@ class Brush {
 		return this;
 	}
 
-	render(_pos) {
-		return this.display(_pos);
+	render(pos) {
+		return this.display(pos);
 	}
 }

@@ -1,0 +1,147 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #333333;
+}
+
+canvas {
+  display: none;
+}
+
+#map {
+  width: 700px;
+  height: auto;
+  margin: auto;
+}
+
+.floor-top {
+  opacity: 0.3;
+}
+
+.floor-bottom,
+.floor-side {
+  opacity: 0.21;
+}
+
+.floor-top,
+.floor-bottom {
+  fill: #656461
+}
+
+
+.floor-side {
+  fill: #b1b1ab
+}
+
+.pillar-base {
+  fill: #656461;
+}
+
+
+.pillar-base-top {
+  fill: #a8a9a4;
+}
+
+.pillar-slots-shadow {
+  fill: #c9c8c2;
+  opacity: 0.85
+}
+
+.pillar-slots-highlight {
+  fill: #d0d7db;
+}
+
+.escalator-step {
+  fill: #ebf5ed;
+}
+
+.escalator-wall {
+  fill: #a0a8ab;
+  opacity: 0.89;
+}
+
+.wall-trim {
+  fill: #393b3d;
+}
+
+.info-kiosk-screen {
+  fill: #4b4e50;
+}
+
+.tall-kiosk-screen {
+  clip-path: url(#single-tall-kiosk-screen);
+}
+
+.silhouette {
+  fill: #333;
+}
+
+.video-wall-screen-1 {
+  clip-path: url(#video-wall-screen-1);
+}
+
+.video-wall-screen-2 {
+  clip-path: url(#video-wall-screen-2);
+}
+
+.video-wall-screen-3 {
+  clip-path: url(#video-wall-screen-3);
+}
+
+.video-wall-screen-4 {
+  clip-path: url(#video-wall-screen-4);
+}
+
+.video-wall-screen-5 {
+  clip-path: url(#video-wall-screen-5);
+}
+
+.small-kiosk-screen {
+  clip-path: url(#small-kiosk-screen);
+}
+
+.info-kiosk-info {
+  fill: red;
+  opacity: 0.4;
+}
+
+#info-kiosk {
+  transform-origin: bottom;
+  transition: transform 250ms ease-in-out;
+  cursor: pointer;
+}
+
+
+#small-kiosk {
+  transform-origin: bottom;
+  transition: transform 250ms ease-in-out;
+  cursor: pointer;
+}
+
+#tall-kiosk {
+  transform-origin: bottom;
+  transition: transform 250ms ease-in-out;
+  cursor: pointer;
+}
+
+#video-wall {
+  transition: transform 250ms ease-in-out;
+  cursor: pointer;
+}
+
+#info-kiosk:hover {
+  transform: scale(1.025) translate(5px, 30px);
+}
+
+#small-kiosk:hover {
+  transform: scale(1.025) translate(0px, 30px);
+}
+
+#tall-kiosk:hover {
+  transform: scale(1.025) translate(-30px, 40px);
+}
+
+#video-wall:hover {
+  transform: scale(1.025) translate(10px, 10px);
+}

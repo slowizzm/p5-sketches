@@ -1,0 +1,80 @@
+body {
+  align-items: center;
+  background: #3f5ed0;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+}
+
+canvas {
+  display: none;
+}
+
+.hamburger {
+  width: 100px;
+  cursor: pointer;
+}
+
+.line-one,
+.line-two,
+.line-three {
+  stroke: white;
+}
+
+.hamburger:hover .line-one,
+.hamburger:hover .line-two,
+.hamburger:hover .line-three {
+  transform-origin: center;
+  animation: line-grow ease-out 500ms;
+
+}
+
+.hamburger:hover .line-two {
+  animation-delay: 75ms;
+}
+
+.hamburger:hover .line-three {
+  animation-delay: 150ms;
+}
+
+.active .line-one {
+  pointer-events:none;
+  transform-origin: center;
+  transform: translate(0px ,6px) rotate(45deg);
+}
+
+.active .line-three {
+  pointer-events:none;
+  transform-origin: center;
+  transform: translate(0px ,-6px) rotate(-45deg);
+}
+
+.active .line-two {
+  animation: line-shrink ease-out 500ms 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes line-shrink {
+  0% {
+    transform: scaleX(1)
+  }
+
+  100% {
+    transform: scaleX(0)
+  }
+}
+
+@keyframes line-grow {
+  0% {
+    transform: scaleX(1)
+  }
+
+  50% {
+    transform: scaleX(1.1)
+  }
+
+  100% {
+    transform: scaleX(1)
+  }
+}

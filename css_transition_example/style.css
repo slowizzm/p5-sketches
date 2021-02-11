@@ -1,0 +1,24 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+canvas {
+  display: none;
+}
+
+.title {
+  font-size: 133px;
+  width: 0px;
+  background: red;
+  -webkit-transition: 2s width;
+  -moz-transition: 2s width;
+  -o-transition: 2s width;
+  -ms-transition: 2s width;
+}
+
+.title:hover {
+  width: 350px;
+}

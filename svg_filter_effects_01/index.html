@@ -1,0 +1,29 @@
+<!DOCTYPE html><html><head>
+    <script src="p5.min.js"></script>
+    <script src="p5.dom.min.js"></script>
+    <script src="p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+
+  </head>
+  <body>
+    <div class="loader">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+    <svg>
+  <defs>
+    <filter id="blob">
+      <fegaussianblur in="line" stdDeviation="11" result="blur"></fegaussianblur>
+      <fecolormatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -15" result="blob"></fecolormatrix>
+      <fecomposite in="line" in2="blob" operator="atop"></fecomposite>
+    </filter>
+  </defs>
+</svg>
+    
+    <script src="sketch.js"></script>
+  
+
+</body></html>

@@ -1,52 +1,48 @@
 let codeTrain;
-let brushes = [];
+const brushes = [];
 
 function preload() {
-	codeTrain = loadImage("CodingTrain.jpg");
+  codeTrain = loadImage('CodingTrain.jpg');
 }
 
 
 function setup() {
-	createCanvas(window.innerWidth - 4, window.innerHeight - 4);
-	background(51);
-	for (let x = 0; x < width; x += 13) {
-		for (let y = 0; y < height; y += 13) {
-			let b = new Brush(x, y);
-			brushes.push(b);
-		}
-	}
-	codeTrain.resize(codeTrain.width * 1.5, codeTrain.height * 1.5);
+  createCanvas(window.innerWidth - 4, window.innerHeight - 4);
+  background(51);
+  for (let cols = 0; cols < width; cols += 13) {
+    for (let rows = 0; rows < height; rows += 13) {
+      brushes.push(new Brush({
+        x: cols,
+        y: rows
+      }));
+    }
+  }
+  codeTrain.resize(codeTrain.width * 1.5, codeTrain.height * 1.5);
 }
 
 function draw() {
-	for (let brush of brushes) {
-		brush.run();
-	}
+  for (let brush of brushes) {
+    brush.display();
+  }
+  
+  noLoop();
 }
 
 class Brush {
-	constructor(_x, _y) {
-		this.pos = createVector(_x, _y);
-	}
+  constructor(pos) {
+    this.pos = {
+      x: pos.x,
+      y: pos.y
+    };
+  }
 
-	update() {
-		this.pos.x = mouseX + (random(-3, 3));
-		this.pos.y = mouseY + (random(-3, 3));
-	}
+  display() {
+    noStroke();
+    let px = floor(this.pos.x);
+    let py = floor(this.pos.y);
+    let col = codeTrain.get(px, py);
+    fill(col[0], col[1], col[2], 255);
 
-	display() {
-		noStroke();
-		let px = floor(this.pos.x);
-		let py = floor(this.pos.y);
-		let col = codeTrain.get(px, py);
-		fill(col[0], col[1], col[2], 255);
-		let d = dist(mouseX, mouseY, this.pos.x, this.pos.y);
-
-		rect(this.pos.x, this.pos.y, 3 / (sin(d)), 3 / (sin(d)));
-	}
-
-	run() {
-		//this.update();
-		this.display();
-	}
+    rect(this.pos.x, this.pos.y, (sin(random())*10), (cos(random()))*random(100,500));
+  }
 }

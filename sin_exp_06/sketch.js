@@ -1,29 +1,28 @@
-let col = 0;
-let sineSize;
-let a = 0;
-let counter = 0;
+let r;
+let angle;
 
 function setup() {
-	createCanvas(windowWidth, windowHeight);
-	background(51);
-	noStroke();
+  createCanvas(400, 400);
+  angleMode(DEGREES);
+  r = 0;
+  angle = random(360);
+  background(220);
 }
 
 function draw() {
-	for (let x = 0; x < 33; x++) {
-		for (let y = 0; y < 33; y++) {
-			sineSize = sin(counter + tan(x / 42 + counter) + tan(y / 33 + counter) - tan((x + y) / 7 + counter));
-			col = map(sin(sineSize), -1, 1, 0, 255);
-			fill(col, col, col);
-			rect(width / 2, y * y, sineSize * x * y, sineSize);
-			ellipse(x * x, height / 2, sineSize / x, sineSize * y * x);
-			ellipse(width / 2, y * y, (sineSize * x * y) / 2, sineSize);
-			rect(x * x, height / 2, sineSize / x, (sineSize * y * x) / 2);
-		}
-		counter += 0.001;
-	}
-}
+  for (let i = 0; i < 255; i++) {
+    push();
+    translate(width / 2, height / 2);
+    let x = cos(angle) * r;
+    let y = sin(angle) * r;
+  	stroke((frameCount+i)%255);
+		noFill();
+    ellipse(x, y,13%100,13%3);
+	
+    r += map(sin(i+frameCount),-1,1,-0.05,0.05);
+    angle += map(tan(i+frameCount%0.2),-1,1,-5,5);
+    pop();
 
-function windowResized() {
-	resizeCanvas(windowWidth, windowHeight);
+  }
+
 }

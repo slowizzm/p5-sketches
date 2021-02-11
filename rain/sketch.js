@@ -1,38 +1,40 @@
-var drop = [];
+let drops = [];
 
 function setup() {
-	createCanvas(windowWidth, windowHeight);
-	for (var i = 0; i < 200; i++) {
-		drop[i] = new Drop();
-	}
+  createCanvas(windowWidth, windowHeight);
+  for (let i = 0; i < 200; i++) {
+    drops[i] = new Drop();
+  }
 }
 
 function draw() {
-	clear();
+  clear();
 
-	for (var i = 0; i < 200; i++) {
-		drop[i].show();
-		drop[i].update();
-	}
+  for (let i = 0; i < 200; i++) {
+    drops[i].display();
+    drops[i].update();
+  }
 }
 
-function Drop() {
-	this.x = random(0, width);
-	this.y = random(0, -height);
+class Drop {
+  constructor() {
+    this.pos = createVector(random(width), random(height));
+  }
+  
+  update() {
+    this.speed = random(5, 15);
+    this.gravity = 0.85;
+    this.pos.y = this.pos.y + this.speed * this.gravity;
 
-	this.show = function() {
-		noStroke();
-		fill(112, 182, 234);
-		ellipse(this.x, this.y, 2, 10);
-	}
+    if (this.pos.y > height) {
+      this.pos.y = random(0, -height);
+    }
+  }
+  display() {
+    noStroke();
+    fill(112, 182, 234);
+    ellipse(this.pos.x, this.pos.y, 2, 10);
+  }
 
-	this.update = function() {
-		this.speed = random(5, 15);
-		this.gravity = 0.85;
-		this.y = this.y + this.speed * this.gravity;
 
-		if (this.y > height) {
-			this.y = random(0, -height);
-		}
-	}
 }

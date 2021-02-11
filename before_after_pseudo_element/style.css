@@ -1,0 +1,37 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+}
+
+
+
+p::before {
+  content: '';
+  width: 100px;
+  height: 10px;
+  background: red;
+  display: block;
+}
+
+p::after {
+  content: '';
+  width: 100px;
+  height: 10px;
+  background: red;
+  display: block;
+}
+
+p:hover:before {
+  width: 400px;
+}
+
+p:hover:after {
+  width: 200px;
+}
+
+.click {
+  background: blue;
+}

@@ -1,0 +1,15 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  color:rgb(255, 255, 255);
+  text-align:center;
+}
+canvas {
+  display: block;
+}
+
+a{
+  font-size:30pt;
+  color:#f2f2f2;
+  line-height:2em;
+}

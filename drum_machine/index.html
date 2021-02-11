@@ -1,14 +1,48 @@
 <!DOCTYPE html><html><head>
-    <script src="p5.min.js"></script>
-    <script src="p5.dom.min.js"></script>
-    <script src="p5.sound.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8">
+  <script src="p5.js"></script>
+  <script src="p5.dom.min.js"></script>
+  <script src="p5.sound.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
 
-  </head>
-  <body>
-    <script src="sketch.js"></script>
-		<script src="DrumMachine.js"></script>
-  
+</head>
+
+<body>
+
+
+  <div class="drum-machine-container">
+    <div class="display">
+      <h1 class="display-txt">UNIT: 808</h1>
+    </div>
+    <div class="drum-pads">
+      <span class="pad-synth1"></span>
+      <span class="pad-synth2"></span>
+      <span class="pad-synth3"></span>
+      <span class="pad-hat1"></span>
+      <span class="pad-hat2"></span>
+      <span class="pad-snare"></span>
+      <span class="pad-clap"></span>
+      <span class="pad-kick"></span>
+      <span class="pad-open"></span>
+    </div>
+    <div class="sound-packs">
+      <span class="sound-pack-1"> </span>
+      <span class="sound-pack-2"> </span>
+      <span class="sound-pack-3"> </span>
+    </div>
+
+    <div class="toggle">
+      <span class="toggle-container"> </span>
+      <span class="toggle-switch-on"> </span>
+    </div>
+  </div>
+
+  <script src="js/variables.js"></script>
+  <script src="js/functions.js"></script>
+  <script src="js/eventListeners.js"></script>
+  <script src="js/preload.js"></script>
+  <script src="js/helpers.js"></script>
+  <script src="js/sketch.js"></script>
+
 
 </body></html>

@@ -5,7 +5,6 @@ function setup() {
   colorMode(HSB, 360, 100, 100, 1);
 
   rectMode(CENTER);
-  // noLoop();
   xoff = 0.01;
   yoff = 0.01;
 }
@@ -28,13 +27,13 @@ function draw() {
   noiseDetail(7, 0.6);
   for (let x = width - 1; x > 2; x -= 5) {
     for (let y = height - 1; y > 2; y -= 5) {
-      let n = map(noise(x * 0.01 + xoff, y * 0.01 + yoff), 0, 1, 0, 40);
+      let n = map(noise(x * 0.01 + xoff, y * 0.0075 + yoff), 0, 1, 0, 42);
       fill(n, 0.8);
-      rect(x, y, 5, 5);
+      textSize(7);
+      text('0',x, y);
     }
   }
 
   xoff += 0.008;
   yoff += 0.003;
-
 }

@@ -1,28 +1,24 @@
-let r;
-let angle;
+let inc = 0.0,
+  sig = 0.0,
+  amp = 333.0,
+  samples = 333,
+  x1;
 
 function setup() {
-  createCanvas(400, 400);
-  angleMode(DEGREES);
-  r = 0;
-  angle = random(360);
-  background(220);
+  createCanvas(windowWidth * 0.95, windowHeight * 0.95);
+  ellipseMode(CENTER);
+  inc = TWO_PI / samples;
+  noFill();
 }
 
 function draw() {
-  for (let i = 0; i < 255; i++) {
-    push();
-    translate(width / 2, height / 2);
-    let x = cos(angle) * r;
-    let y = sin(angle) * r;
-  	stroke((frameCount+i)%255);
-		noFill();
-    ellipse(x, y,13%100,13%3);
-	
-    r += map(sin(i+frameCount),-1,1,-0.05,0.05);
-    angle += map(tan(i+frameCount%0.2),-1,1,-5,5);
-    pop();
-
+  background(13, 17, 21);
+  translate(0, height * 0.5);
+  for (let i = 0; i < samples; i++) {
+    stroke(sig, 155 - i, 255 - i, i * 13);
+    x1 = i * 7;
+    sig = amp * abs(sin(i * inc));
+    ellipse(x1, 0, 333, sig);
   }
-
+  inc += 0.0005;
 }
