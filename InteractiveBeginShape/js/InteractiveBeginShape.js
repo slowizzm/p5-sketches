@@ -20,7 +20,19 @@ class InteractiveBeginShape {
     } else {
       noFill();
     }
-    stroke(217);
+
+
+    switch (swapStrokeCol.value()) {
+      case 'black':
+        stroke('#131313');
+        break;
+
+      case 'white':
+        stroke('#f2f2f2');
+        break;
+    }
+
+
     switch (swapType.value()) {
       case 'Line':
         beginShape();

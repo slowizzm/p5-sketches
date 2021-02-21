@@ -2,11 +2,11 @@ class Points {
   constructor(_x, _y) {
     this.pos = createVector(_x, _y);
     this.size = createVector(75, 50);
-    this.r = 13;
+    this.diam = 10;
     this.offset = createVector();
     this.isDraggable = false;
     this.isRollOver = false;
-    // this.showCoords = true;
+    this.showCoords = true;
   }
 
   rollOver() {
@@ -34,7 +34,7 @@ class Points {
       noFill();
     }
     stroke(0, 175, 200);
-    ellipse(this.pos.x, this.pos.y, this.r);
+    ellipse(this.pos.x, this.pos.y, this.diam);
 
     return this;
   }
